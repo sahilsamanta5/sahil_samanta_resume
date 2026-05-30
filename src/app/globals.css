@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --background:        #0a0a0a;
+  --bg-surface:        #0f1a18;
+  --bg-card:           #162620;
+  --bg-hover:          #1d3530;
+
+  /* Accent colors — sampled from your logo */
+  --accent-cyan:       #3dd6c8;
+  --accent-teal:       #2ab8a0;
+  --accent-blue:       #5ab4dc;
+  --accent-glow:       rgba(61, 214, 200, 0.12);
+
+/* Text - CONTRAST ADJUSTMENTS */
+  --foreground:        #f0fdfb; /* Slightly brighter for better sharpness */
+  --text-muted:        #b0d3ce; /* Increased brightness for readability */
+  --text-faint:        #7ea9a2; /* Increased brightness for accessibility */
+
+  /* Borders */
+  --border:            #1a7a68;
+  --border-subtle:     rgba(26, 122, 104, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans:        'Inter', Arial, Helvetica, sans-serif;
+  --font-serif:       'Playfair Display', Georgia, serif;
+  --font-mono:        'JetBrains Mono', monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings — use serif for personality matching your logo */
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+/* Section dividers */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Links & accent text */
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-blue);
+}
+
+button:hover, .btn:hover {
+  filter: brightness(1.1); /* Lightens the button slightly */
+  color: var(--background) !important; /* Forces text to dark on hover */
+}
+
+/* Skill tags / badges */
+code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: #ffffff;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+
+/* Selection highlight */
+::selection {
+  background: var(--accent-glow);
+  color: var(--accent-cyan);
+}
+
+/* Scrollbar (Webkit) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+html {
+  scroll-behavior: smooth;
+}
