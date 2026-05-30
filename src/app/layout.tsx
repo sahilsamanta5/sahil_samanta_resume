@@ -19,27 +19,25 @@ export const metadata: Metadata = {
     default: "Sahil Samanta | Software Engineer",
     template: "%s | Sahil Samanta",
   },
-
   description:
-    "Software Engineer specializing in Python, Django, React, AI-powered applications, full-stack web development, and scalable business solutions. Explore professional projects, technical expertise, and creative work.",
-
+  "Software Engineer specializing in Python, Django, React, TypeScript, and full-stack web development. Experienced in building SaaS platforms, content management systems, business applications, and modern web experiences.",
   keywords: [
     "Sahil Samanta",
     "Software Engineer",
+    "Full Stack Developer",
     "Python Developer",
     "Django Developer",
     "React Developer",
-    "Full Stack Developer",
+    "TypeScript Developer",
+    "JavaScript Developer",
     "Frontend Developer",
     "Backend Developer",
-    "AI Developer",
     "Web Developer",
-    "JavaScript Developer",
-    "TypeScript Developer",
+    "SaaS Developer",
+    "CMS Developer",
     "Portfolio",
     "Software Development",
   ],
-
   authors: [
     {
       name: "Sahil Samanta",
@@ -69,11 +67,11 @@ export const metadata: Metadata = {
     siteName: "Sahil Samanta Portfolio",
     title: "Sahil Samanta | Software Engineer",
     description:
-      "Software Engineer specializing in Python, Django, React, AI-powered applications, full-stack web development, and scalable business solutions.",
+    "Software Engineer specializing in Python, Django, React, TypeScript, and full-stack web development. Experienced in building SaaS platforms, content management systems, business applications, and modern web experiences.",
 
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sahil Samanta Portfolio",
@@ -85,8 +83,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sahil Samanta | Software Engineer",
     description:
-      "Software Engineer specializing in Python, Django, React, AI-powered applications, full-stack web development, and scalable business solutions.",
-    images: ["/og-image.jpg"],
+    "Software Engineer specializing in Python, Django, React, TypeScript, and full-stack web development. Experienced in building SaaS platforms, content management systems, business applications, and modern web experiences.",
+    images: ["/og-image.png"],
   },
 
   category: "Technology",
