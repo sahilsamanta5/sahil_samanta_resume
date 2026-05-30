@@ -1,4 +1,4 @@
-import { TbX, TbBrandGithub } from "react-icons/tb";
+import { TbX, TbBrandGithub, TbExternalLink } from "react-icons/tb";
 import { ShowcaseItem } from "./showcaseData";
 
 interface MediaModalProps {
@@ -84,40 +84,21 @@ export default function MediaModal({
           )}
 
           {/* PDF */}
-
-          {item.type === "pdf" && (
-            <iframe
-              src={item.source}
-              className="h-[75vh] w-full"
-              title={item.title}
-            />
-          )}
         </div>
 
         {/* Footer */}
 
-        {(item.github || item.type === "pdf") && (
+        {(item.link ) && (
           <div className="flex justify-end gap-3 border-t border-[var(--border-subtle)] p-4">
-            {item.github && (
+            {item.link && (
               <a
-                href={item.github}
+                href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-[var(--border-subtle)] px-4 py-2 text-sm text-[var(--text-muted)] transition-all hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]"
               >
-                <TbBrandGithub />
-                GitHub
-              </a>
-            )}
-
-            {item.type === "pdf" && (
-              <a
-                href={item.source}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-[var(--accent-cyan)] px-4 py-2 text-sm text-[var(--accent-cyan)] transition-all hover:bg-[var(--accent-cyan)] hover:text-[var(--background)]"
-              >
-                Open PDF
+                <TbExternalLink />
+                {item.linkText || "Visit"}
               </a>
             )}
           </div>
