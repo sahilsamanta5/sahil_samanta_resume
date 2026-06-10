@@ -138,50 +138,51 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
         </div>
 
         <div
-            className={`
-                flex
-                flex-col
-                px-[28px]
-                py-4
-                transition-all
-                duration-300
-                overflow-hidden
+          className={`
+            flex
+            flex-col
+            px-[28px]
+            py-4
+            transition-all
+            duration-300
+            overflow-hidden
 
-                ${
-                mobileOpen
-                    ? ""
-                    : "group-[.is-collapsed]/sidebar:px-0 group-[.is-collapsed]/sidebar:items-center"
-                }
-            `}
-            >
-            <div className="flex items-center">
-                <div className="w-[6px] h-[6px] rounded-full bg-[var(--accent-cyan)] animate-pulse" />
-
-                <span
-                className={`
-                    ml-3
-                    text-[10px]
-                    tracking-[0.15em]
-                    text-[var(--text-muted)]
-                    whitespace-nowrap
-                    overflow-hidden
-                    transition-all
-                    duration-300
-
-                    ${
-                    mobileOpen
-                        ? "max-w-[200px] opacity-100"
-                        : "max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0 group-[.is-collapsed]/sidebar:ml-0"
-                    }
-                `}
-                >
-                OPEN TO OPPORTUNITIES
-                </span>
-            </div>
+            ${
+              mobileOpen
+                ? ""
+                : "group-[.is-collapsed]/sidebar:px-0 group-[.is-collapsed]/sidebar:items-center"
+            }
+          `}
+        >
+          <div className="flex items-center mb-2">
+            <div className="w-[6px] h-[6px] rounded-full bg-[var(--accent-cyan)] animate-pulse" />
 
             <span
-                className={`
-                mt-2
+              className={`
+                ml-3
+                text-[10px]
+                tracking-[0.15em]
+                text-[var(--text-muted)]
+                whitespace-nowrap
+                overflow-hidden
+                transition-all
+                duration-300
+
+                ${
+                  mobileOpen
+                    ? "max-w-[200px] opacity-100"
+                    : "max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0 group-[.is-collapsed]/sidebar:ml-0"
+                }
+              `}
+            >
+              OPEN TO OPPORTUNITIES
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            {/* ── Dev Experience ── */}
+            <span
+              className={`
                 text-[9px]
                 tracking-[0.15em]
                 text-[var(--accent-cyan)]
@@ -191,15 +192,37 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 duration-300
 
                 ${
-                    mobileOpen
+                  mobileOpen
                     ? "max-w-[200px] opacity-100"
-                    : "max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0 group-[.is-collapsed]/sidebar:mt-0"
+                    : "max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0"
                 }
-                `}
+              `}
             >
-                2+ YEARS EXPERIENCE
+              4+ YRS DEV EXPERIENCE
             </span>
-            </div>
+
+            {/* ── Work Experience ── */}
+            <span
+              className={`
+                text-[9px]
+                tracking-[0.15em]
+                text-[var(--text-faint)]
+                whitespace-nowrap
+                overflow-hidden
+                transition-all
+                duration-300
+
+                ${
+                  mobileOpen
+                    ? "max-w-[200px] opacity-100"
+                    : "max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0"
+                }
+              `}
+            >
+              2+ YRS WORK EXPERIENCE
+            </span>
+          </div>
+        </div>
 
         {/* ── Nav ── */}
         <nav className="flex flex-col flex-1 gap-1 px-3 py-2 overflow-hidden">

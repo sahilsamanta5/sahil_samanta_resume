@@ -102,8 +102,8 @@ export const showcaseData: ShowcaseItem[] = [
         title: "Locope SaaS Platform",
         category: "Software",
         type: "image",
-        thumbnail: "/images/projects/bims_startup_catalysts.png",
-        source: "/images/projects/bims_startup_catalysts.png",
+        thumbnail: "/images/projects/locope.png",
+        source: "/images/projects/locope.png",
         description: "Architected a comprehensive multi-tenant SaaS platform for fitness centers, implementing strict role-based access control (RBAC) for administrators, gym owners, and staff. Engineered a robust Django backend to support a custom social community feed, an approval-based e-commerce marketplace, and dynamic class-booking with PhonePe integration. Delivered data-rich analytical dashboards for revenue tracking and a QR-based attendance system bridging physical and digital customer management.",
     },
     {
