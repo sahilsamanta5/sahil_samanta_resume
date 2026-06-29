@@ -28,8 +28,7 @@ export default function ContactSection() {
             bg-fixed
         "
         style={{
-            backgroundImage:
-            "url('/images/bg/contact_bg.png')",
+            backgroundImage: `url(${translation?.background?.contact || "/images/bg/contact_bg.png"})`,
         }}
         />
 

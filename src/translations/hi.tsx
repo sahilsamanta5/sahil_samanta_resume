@@ -3,7 +3,8 @@ import { ShowcaseItem } from "../components/showcase/showcaseData";
 
 export default {
     background: {
-        hero: "/images/bg/hi/hero_bg.jpg"
+        hero: "/images/bg/hi/hero_bg.jpg",
+        contact: "/images/bg/hi/contact_bg.png"
     }, 
     header: {
         nav: [
