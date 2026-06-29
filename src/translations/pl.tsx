@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/pl/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "STRONA GŁÓWNA",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Lokalizacja: <span className="text-[var(--accent-blue)]">Kolkata, Indie</span>. Otwarty na oferty pracy pełnoetatowej, zdalnej, hybrydowej oraz relokację.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_pl.png"
     },
     profile: {
         tabs: [

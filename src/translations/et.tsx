@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/et/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "AVALEHT",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Asukoht: <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Avatud täistööajaga, kaugtöö, hübriidtöö ja ümberasumist nõudvatele võimalustele.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_et.png"
     },
     profile: {
         tabs: [

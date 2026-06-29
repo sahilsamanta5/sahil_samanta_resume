@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/es/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "INICIO",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Con base en <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Abierto a oportunidades a tiempo completo, remotas, híbridas y de reubicación.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_es.png"
     },
     profile: {
         tabs: [

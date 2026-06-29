@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { TbArrowRight, TbDownload } from "react-icons/tb";
 import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 export default function Hero() {
   const { translation } = useLanguage();
@@ -14,7 +15,12 @@ export default function Hero() {
     >
       
       {/* ── Background Decorative Layers ── */}
-      <div className="absolute inset-0 z-0 bg-[url('/images/bg/hero_bg.png')] bg-cover bg-center opacity-10 blend-soft-light pointer-events-none" />
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-100 mix-blend-soft-light pointer-events-none"
+        style={{
+          backgroundImage: `url(${translation?.background?.hero || "/images/bg/hero_bg.png"})`,
+        }}
+      />
       <div className="pointer-events-none absolute left-[15%] top-[25%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-cyan)] opacity-[0.04] blur-[120px]" />
       <div className="pointer-events-none absolute right-[10%] bottom-[20%] h-[500px] w-[500px] translate-x-1/2 translate-y-1/2 rounded-full bg-[var(--accent-blue)] opacity-[0.03] blur-[100px]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]">
@@ -122,7 +128,7 @@ export default function Hero() {
             {/* Character Image */}
             <div className="relative h-full w-full overflow-visible">
               <Image 
-                src="/images/model/sahil_model.png" 
+                src={translation.hero.model || translations.en.hero.model}
                 alt="Sahil Samanta AI Character" 
                 fill
                 className="object-contain object-bottom drop-shadow-2xl" 

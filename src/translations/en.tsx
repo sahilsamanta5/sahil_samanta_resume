@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 
 export default {
+    background: {
+        hero: "/images/bg/en/hero_bg_1.jpg"
+    }, 
     header: {
         nav: [
             { label: "HOME",     href: "#home",     icon: TbHome },
@@ -49,7 +52,8 @@ export default {
                     Based in <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Open to full-time, remote, hybrid, and relocation opportunities.
                 </>
             )
-        }
+        },
+        model: "/images/model/sahil_en.png"
     },
     profile: {
         tabs: [

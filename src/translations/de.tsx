@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 
 export default {
+    background: {
+        hero: "/images/bg/de/hero_bg.jpg"
+    }, 
     header: {
         nav: [
             { label: "STARTSEITE", href: "#home", icon: TbHome },
@@ -64,6 +67,7 @@ export default {
                 </>
             ),
         },
+        model: "/images/model/sahil_de.png"
     },
     profile: {
         tabs: [

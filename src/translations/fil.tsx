@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/fil/hero_bg.jpg"
+    }, 
     header: {
         nav: [
             { label: "HOME",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Nakatira sa <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Bukas para sa mga oportunidad na full-time, remote, hybrid, at relocation.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_fil.png"
     },
     profile: {
         tabs: [

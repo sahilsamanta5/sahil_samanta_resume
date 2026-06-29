@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 
 export default {
+    background: {
+        hero: "/images/bg/jp/hero_bg.jpg"
+    }, 
     header: {
         nav: [
             { label: "ホーム",     href: "#home",     icon: TbHome },
@@ -54,7 +57,8 @@ export default {
                     積極的に募集しています。
                 </>
             )
-        }
+        },
+        model: "/images/model/sahil_jp.png"
     },
     profile: {
         tabs: [

@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/fi/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "ETUSIVU",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Sijainti: <span className="text-[var(--accent-blue)]">Kolkata, Intia</span>. Avoimena kokoaikaisiin, etä-, hybridi- ja relokaatiomahdollisuuksiin.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_fi.png"
     },
     profile: {
         tabs: [

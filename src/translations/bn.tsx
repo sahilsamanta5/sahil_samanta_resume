@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/bn/hero_bg.jpg"
+    }, 
     header: {
         nav: [
             { label: "হোম",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     ভারতের <span className="text-[var(--accent-blue)]">কলকাতাতে</span> অবস্থিত। ফুল-টাইম, রিমোট, হাইব্রিড এবং রিলোকেশন সুযোগের জন্য উন্মুক্ত।
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_bn.png"
     },
     profile: {
         tabs: [

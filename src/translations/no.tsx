@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/no/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "HJEM",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Basert i <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Åpen for fulltids-, remote-, hybrid- og relokeringsmuligheter.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_no.png"
     },
     profile: {
         tabs: [

@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/th/hero_bg.jpg"
+    }, 
     header: {
         nav: [
             { label: "หน้าแรก",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     ประจำอยู่ที่ <span className="text-[var(--accent-blue)]">โกลกาตา ประเทศอินเดีย</span> เปิดรับโอกาสการทำงานแบบเต็มเวลา, ทำงานระยะไกล (Remote), ไฮบริด, และการย้ายถิ่นฐาน
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_th.png"
     },
     profile: {
         tabs: [

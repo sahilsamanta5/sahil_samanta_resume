@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/zh/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "首页",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     常驻<span className="text-[var(--accent-blue)]">印度加尔各答</span>。开放全职、远程、混合办公以及提供搬迁支持的工作机会。
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_zh.png"
     },
     profile: {
         tabs: [

@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/lt/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "PRADŽIA",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Įsikūręs <span className="text-[var(--accent-blue)]">Kalkutoje, Indijoje</span>. Atviras pilno etato, nuotolinio, hibridinio darbo ir persikėlimo galimybėms.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_lt.png"
     },
     profile: {
         tabs: [

@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/cs/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "DOMŮ",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Sídlo: <span className="text-[var(--accent-blue)]">Kalkata, Indie</span>. Otevřený příležitostem na plný úvazek, remote, hybrid i relokaci.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_cs.png"
     },
     profile: {
         tabs: [

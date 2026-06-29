@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/it/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "HOME",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     Con sede a <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Aperto a opportunità full-time, remote, ibride e di trasferimento.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_it.png"
     },
     profile: {
         tabs: [

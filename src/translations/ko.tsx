@@ -2,6 +2,9 @@ import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 
 export default {
+    background: {
+        hero: "/images/bg/ko/hero_bg.jpg"
+    },
     header: {
         nav: [
             { label: "홈",     href: "#home",     icon: TbHome }, //[cite: 1, 2]
@@ -49,7 +52,8 @@ export default {
                     <span className="text-[var(--accent-blue)]">인도 콜카타</span>를 거점으로 활동하고 있습니다. 정규직, 원격, 하이브리드 및 해외 이주를 동반하는 포지션 제안에 열려 있습니다.
                 </>
             ) //[cite: 1, 2]
-        }
+        },
+        model: "/images/model/sahil_ko.png"
     },
     profile: {
         tabs: [
