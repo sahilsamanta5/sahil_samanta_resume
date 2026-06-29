@@ -23,9 +23,8 @@ export default function Home() {
       >
         {/* Drop the Hero component right here! */}
         <Hero />
-        <About />
-        <FeaturedProjects />
         <ProfileTabs />
+        <About />
         <ShowcaseSection />
         <ContactSection />
       </main>

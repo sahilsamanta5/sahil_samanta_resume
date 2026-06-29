@@ -39,7 +39,7 @@ export default function Hero() {
             {/* Logo Container */}
             <div className="relative w-[40vw] max-w-[300px]">
                 <Image 
-                    src="/images/logo/sahil_resume_logo_2.png" 
+                    src="/images/logo/sahil_resume_en_logo_3.png" 
                     alt="Sahil Samanta Logo" 
                     width={1000} 
                     height={1000} 
@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="flex items-center gap-3">
               <div className="h-[1px] w-8 bg-[var(--accent-cyan)]" />
               <span className="font-sans text-[11px] font-medium tracking-[0.16em] text-[var(--accent-cyan)] uppercase">
-                Software Engineering & Future Game Developer
+                Backend Software Engineer
               </span>
             </div>
             
@@ -60,14 +60,23 @@ export default function Hero() {
 
           <div className="space-y-6">
             <h2 className="font-serif text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl leading-[1.05]">
-              I architect web applications <span className="text-[var(--text-faint)]">&</span> build <span className="relative inline-block text-[var(--accent-blue)]">
-                interactive
-                <span className="absolute bottom-1 left-0 w-full h-[2px] bg-[var(--accent-blue)] opacity-40 rounded-full"></span>
-              </span> environments.
+              <span className="block whitespace-nowrap">
+                Building{" "}
+                <span className="text-[var(--accent-cyan)]">
+                  scalable backend systems
+                </span>
+              </span>
+
+              <span className="block mt-2 whitespace-nowrap">
+                <span className="text-[var(--accent-cyan)]">
+                  Exploring
+                </span>{" "}
+                AI & game development
+              </span>
             </h2>
 
             <p className="max-w-xl font-sans text-[15px] leading-relaxed text-[var(--text-muted)] sm:text-[16px]">
-              Currently focused on building scalable backend architectures and full-stack solutions. Bridging the gap between robust logic and creative technology, with a focus on Python, Django, and modern game engine pipelines.
+              Backend Software Engineer specializing in scalable APIs, cloud-native applications, and modern backend architecture using Python, Django, and FastAPI. Passionate about AI, distributed systems, and building software that scales.
             </p>
           </div>
 

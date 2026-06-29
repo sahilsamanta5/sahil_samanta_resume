@@ -5,8 +5,8 @@ import { TbHome, TbUser, TbTerminal2, TbLayoutGrid, TbMail, TbBrandLinkedin, TbC
 
 const NAV = [
   { label: "HOME",     href: "#home",     icon: TbHome },
-  { label: "ABOUT",    href: "#about",    icon: TbUser },
   { label: "SKILLS",   href: "#profile",   icon: TbTerminal2 },
+  { label: "ABOUT",    href: "#about",    icon: TbUser },
   { label: "PROJECTS", href: "#showcase", icon: TbLayoutGrid },
   { label: "CONTACT",  href: "#contact",  icon: TbMail },
 ];

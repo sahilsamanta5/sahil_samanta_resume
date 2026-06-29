@@ -24,14 +24,16 @@ export interface ShowcaseItem {
 
   link?: string;
   linkText?: string;
+  featured?: boolean;
 }
 
 export const filters = [
-  "All",
+  "Featured",
   "Software",
 //   "AI",
 //   "Music",
   "Creative",
+  "All",
 ];
 
 export const showcaseData: ShowcaseItem[] = [
@@ -42,9 +44,10 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/apearenz.png",
         source: "/images/projects/apearenz.png",
-        description: "Architected a high-performance single-page application for a corporate client. Engineered a scalable, custom user interface to meet strict specifications, and optimized the build pipeline by containerizing the application with Docker and configuring Nginx for secure domain routing.",
+        description: "Developed and deployed a modern single-page corporate website using Next.js. Configured Docker, Nginx, and production hosting while optimizing responsiveness, performance, and deployment workflows.",
         link: "https://apearenz.com/",
-        linkText: "Visit Website"
+        linkText: "Visit Website",
+        featured: true
     },
     {
         id: 2,
@@ -53,7 +56,8 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/katalyse.jpg",
         source: "/images/projects/katalyse.jpg",
-        description: "Engineered a scalable, mobile-responsive e-commerce chat widget designed for seamless integration across Shopify storefronts. Developed optimized backend APIs to power dynamic chat-based purchasing and algorithmic recommendation engines, while configuring Looker Studio dashboards to track critical conversion metrics.",
+        description: "Developed and maintained a responsive Shopify-integrated AI chat widget supporting product discovery and customer interactions. Built backend APIs, integrated Shopify GraphQL, and created Looker Studio dashboards to monitor user engagement and business metrics.",
+        featured: true
     },
     {
         id: 3,
@@ -62,9 +66,10 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/sriramanujavani.png",
         source: "/images/projects/sriramanujavani.png",
-        description: "Developed a full-stack content management platform featuring robust CRUD operations and a secure, interactive administrative dashboard to streamline data entry. Successfully configured and deployed the production environment on an Ubuntu server utilizing Apache2 to ensure optimal system stability.",
+        description: "Developed a full-stack content management system (CMS) with secure administrative dashboards, dynamic content management, CRUD operations, and production deployment on Ubuntu using Apache2.",
         link: "https://sriramanujavani.com/",
-        linkText: "Visit Website"
+        linkText: "Visit Website",
+        featured: true
     },
     {
         id: 4,
@@ -73,20 +78,21 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/dhanwise.png",
         source: "/images/projects/dhanwise.png",
-        description: "Engineered a high-performance financial technology SPA designed to connect users with verified advisors. Architected a strictly typed frontend infrastructure to ensure long-term maintainability, delivering an optimized, cross-device user experience.",
+        description: "Developed a responsive financial technology platform connecting users with verified financial advisor Raman Khandelwal through a modern, type-safe frontend architecture.",
         link: "https://dhanwise.com/",
         linkText: "Visit Website"
     },
     {
         id: 5,
-        title: "Sunrise Virtual Selfie",
+        title: "ITC Sunrise & PujaApp Virtual Selfie With Maa",
         category: "Software",
         type: "image",
         thumbnail: "/images/projects/sunrise.png",
         source: "/images/projects/sunrise.png",
-        description: "Developed a responsive virtual photo booth enabling remote users to generate customized, interactive images. Implemented automated framing and processing logic via AI integration to ensure instant, high-quality rendering for a high-traffic community initiative.",
+        description: "Built an AI-powered virtual selfie platform within three days for a large Durga Puja cultural initiative. Developed the complete frontend, Firebase backend, Firestore database, administrative dashboard, AI-powered background removal using Dezgo APIs, image enhancement controls, and Google Tag Manager integration before deploying the application with Firebase Hosting.",
         link: "https://thepuja.app/",
-        linkText: "Visit Website"
+        linkText: "Visit Website",
+        featured: true
     },
     {
         id: 6,
@@ -95,7 +101,7 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/bims_startup_catalysts.png",
         source: "/images/projects/bims_startup_catalysts.png",
-        description: "Engineered a dynamic, responsive web platform for the college Entrepreneurship Cell. Architected a custom Django administrative dashboard for real-time management of team structures, mentor networks, and user contributions. The platform served as the primary digital showcase during a core presentation at IIT Bombay.",
+        description: "Developed the official Entrepreneurship Cell platform with custom Django administration, mentor management, alumni management, contribution tracking, and blog approval workflows. The platform represented the institution during the IIT Bombay E-Cell competition and was built within three days.",
     },
     {
         id: 7,
@@ -104,7 +110,8 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/locope.png",
         source: "/images/projects/locope.png",
-        description: "Architected a comprehensive multi-tenant SaaS platform for fitness centers, implementing strict role-based access control (RBAC) for administrators, gym owners, and staff. Engineered a robust Django backend to support a custom social community feed, an approval-based e-commerce marketplace, and dynamic class-booking with PhonePe integration. Delivered data-rich analytical dashboards for revenue tracking and a QR-based attendance system bridging physical and digital customer management.",
+        description: "Designed and developed a multi-vendor fitness and e-commerce SaaS platform supporting administrators, gym owners, trainers, staff, and customers. Implemented role-based access control, PhonePe payment integration, REST APIs for Flutter applications, community features, QR attendance, booking management, and analytical dashboards.",
+        featured: true
     },
     {
         id: 8,
@@ -131,7 +138,8 @@ export const showcaseData: ShowcaseItem[] = [
         type: "image",
         thumbnail: "/images/projects/activcms.png",
         source: "/images/projects/activcms.png",
-        description: "Worked on a custom real estate website builder platform that allowed businesses to generate and manage websites from configurable templates. Implemented dynamic section management, content editing, image updates, and template customization features using Django, Bootstrap 5, and AJAX. Integrated property and business data from ActivCRM, enabling automated content synchronization between CRM and website platforms."
+        description: "Worked on a custom real estate website builder platform that allowed businesses to generate and manage websites from configurable templates. Implemented dynamic section management, content editing, image updates, and template customization features using Django, Bootstrap 5, and AJAX. Integrated property and business data from ActivCRM, enabling automated content synchronization between CRM and website platforms.",
+        featured: true
     },
     {
         id: 11,

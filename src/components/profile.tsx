@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { 
   TbCode, 
   TbSchool, 
@@ -16,114 +17,193 @@ import {
   TbBrain,
   TbWorld,
   TbExternalLink,
-  TbCertificate
+  TbCertificate,
+  TbServer2,
+  TbDeviceDesktopCode,
+  TbDatabase,
+  TbCloudComputing,
+  TbTools,
+  TbHierarchy3,
+  TbMusic
 } from "react-icons/tb";
 
 // ── DATA STRUCTURES ──
 
 const skillsData = [
-  { category: "Backend Architecture", icon: TbServer, skills: ["Python", "Django", "FastAPI", "MySQL", "REST APIs", "RBAC Auth"] },
-  { category: "Frontend Engineering", icon: TbLayoutDashboard, skills: ["Next.js", "TypeScript", "React", "Tailwind CSS"] },
-  { category: "Interactive & 3D", icon: TbDeviceGamepad2, skills: ["Unity", "C#", "Blender", "State Mechanics"] },
-  { category: "DevOps & Tooling", icon: TbSettingsCode, skills: ["Docker", "Nginx", "Ubuntu / VPS", "Git", "Payment APIs", "AI-Assisted Workflows"] },
+  { category: "Programming Languages", icon: TbCode, skills: ["Python", "JavaScript", "TypeScript", "SQL", "C", "C#", "Java"] },
+  { category: "Backend Engineering", icon: TbServer2, skills: ["Django", "Django REST Framework (DRF)", "FastAPI", "Flask", "REST API Design", "GraphQL", "Payment Gateway Integration"] },
+  { category: "Frontend Engineering", icon: TbDeviceDesktopCode, skills: ["React", "Next.js", "React Native", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "AJAX"] },
+  { category: "Databases", icon: TbDatabase, skills: ["MySQL", "MongoDB", "Firebase Firestore", "SQLite3"] },
+  { category: "Cloud & DevOps", icon: TbCloudComputing, skills: ["Docker", "Linux", "Nginx", "PM2", "Jenkins", "AWS IAM", "AWS Lambda", "Google Cloud VM", "Firebase Hosting", "Seed.run"] },
+  { category: "Tools & Platforms", icon: TbTools, skills: ["Git", "GitHub", "Postman", "Jira", "Shopify GraphQL", "Magento", "Google Analytics 4 (GA4)", "Google Tag Manager (GTM)", "Looker Studio", "Firebase", "Dezgo AI API", "Canva", "Blender", "Unity", "Adobe Premiere Pro"] },
+  { category: "Concepts", icon: TbHierarchy3, skills: [ "RESTful Architecture", "Authentication & Authorization", "Role-Based Access Control (RBAC)", "MVC Architecture", "Responsive Design"]}
 ];
 
 const educationData = [
   {
     degree: "Master of Computer Applications (MCA)",
     institution: "Manipal University Jaipur",
-    timeline: "Currently Pursuing",
-    description: "Focusing on advanced software engineering principles, system architecture, and modern full-stack development methodologies."
+    timeline: "2026 - Present",
+    description:
+      "Currently pursuing a master's degree with a focus on software engineering, distributed systems, cloud computing, and modern application development."
   },
   {
     degree: "Bachelor of Business Administration (BBA)",
     institution: "Bharatiya Vidya Bhavan Institute of Management Science, Kolkata",
-    timeline: "2024",
-    description: "CGPA: 8.13/10. Built a strong foundation in business operations, management strategy, and analytical thinking—providing a unique perspective on the business logic behind enterprise software."
+    timeline: "2021 - 2024",
+    description:
+      "Graduated with a CGPA of 8.13/10. Developed strong analytical, problem-solving, and business management skills, providing valuable insight into designing software that aligns with real-world business needs."
   }
 ];
 
 const hobbiesData = [
   {
-    title: "Game Systems & Mechanics",
+    title: "Game Development",
     icon: TbDeviceGamepad2,
-    description: "I study gaming through an architect's lens—deconstructing state logic, resource economies, and 3D environments to fuel my own development in Unity and C#."
+    description:
+      "I enjoy learning Unity, C#, and game design by building small prototypes and studying gameplay mechanics, level design, and interactive systems."
   },
   {
-    title: "Visual & Narrative Arts",
-    icon: TbMovie,
-    description: "I draw inspiration from anime and cinema to craft immersive narratives and character evolution mechanics, ensuring my projects have depth and world-building."
+    title: "Music & Singing",
+    icon: TbMusic,
+    description:
+      "Singing is one of my favorite creative outlets. It helps me relax, improve focus, and maintain a healthy balance alongside software development."
   },
   {
-    title: "Creative Precision",
+    title: "Cooking & Creativity",
     icon: TbChefHat,
-    description: "From culinary arts to digital design, I value precision. These creative outlets sharpen my aesthetic judgment, directly improving the UI/UX polish of my web applications."
+    description:
+      "Cooking teaches patience, attention to detail, and continuous experimentation—qualities I also apply when designing and building software."
   },
   {
-    title: "Systems & Global Exploration",
+    title: "Learning Languages & Culture",
     icon: TbWorld,
-    description: "Driven by curiosity, I explore the world and new languages (like Japanese) to continuously iterate on my knowledge base and broaden my perspective on how systems function."
+    description:
+      "I'm currently learning Japanese and enjoy exploring different cultures, technologies, and ideas through travel, books, and online communities."
   }
 ];
 
 const languagesData = [
   { language: "English", proficiency: "Professional Working Proficiency" },
-  { language: "Hindi", proficiency: "Native / Bilingual" },
-  { language: "Bengali", proficiency: "Native / Bilingual" },
-  { language: "Japanese", proficiency: "Learning" }
+  { language: "Hindi", proficiency: "Native / Bilingual Proficiency" },
+  { language: "Bengali", proficiency: "Native / Bilingual Proficiency" },
+  { language: "Japanese", proficiency: "Beginner (JLPT N5)" }
 ];
 
 const certificationsData = [
   {
-    title: "Introduction to Back-End Development",
-    provider: "Meta",
-    date: "2024",
-    url: "https://www.coursera.org/account/accomplishments/certificate/87SUDH8K7DVP"
+    title: "Applied AI Foundations",
+    provider: "OpenAI",
+    date: "June 21, 2026",
+    url: "https://academy.openai.com/home/certificate/cxq5gafs8e",
+    image: "/images/certs/1.jpg"
+  },
+  {
+    title: "AI Foundations",
+    provider: "OpenAI",
+    date: "June 21, 2026",
+    url: "https://academy.openai.com/home/certificate/zz2fnm47qb",
+    image: "/images/certs/2.jpg"
   },
   {
     title: "AI For Everyone",
     provider: "DeepLearning.AI",
-    date: "2026",
-    url: "https://www.coursera.org/account/accomplishments/certificate/30G7WVF7XUE0"
-  },
-  {
-    title: "Data Analysis Using Python",
-    provider: "University of Pennsylvania",
-    date: "2023",
-    url: "https://www.coursera.org/account/accomplishments/certificate/9ZF6F9Z3MUKW"
+    date: "March 26, 2026",
+    url: "https://www.coursera.org/account/accomplishments/verify/30G7WVF7XUE0",
+    image: "/images/certs/3.jpeg"
   },
   {
     title: "Introduction to Git and GitHub",
     provider: "Google",
-    date: "2024",
-    url: "https://www.coursera.org/account/accomplishments/certificate/UX8XC6HVSQU6"
+    date: "August 26, 2024",
+    url: "https://www.coursera.org/account/accomplishments/verify/UX8XC6HVSQU6",
+    image: "/images/certs/4.jpeg"
   },
   {
-    title: "Crash Course on Python",
-    provider: "Google",
-    date: "2022",
-    url: "https://www.coursera.org/account/accomplishments/certificate/HUTNE43EM3MP"
-  },
-  {
-    title: "Introduction to Cybersecurity",
+    title: "Introduction to Data Analytics",
     provider: "IBM",
-    date: "2023",
-    description: "Foundational knowledge in identifying cyber threats, understanding attack vectors, and securing system environments.",
-    url: "https://www.coursera.org/account/accomplishments/certificate/VAZPAMMY5XGS"
-  }
+    date: "April 13, 2024",
+    url: "https://www.coursera.org/account/accomplishments/verify/JXACTK5XY6L3",
+    image: "/images/certs/6.jpg"
+  },
+  {
+    title: "Introduction to Back-End Development",
+    provider: "Meta",
+    date: "March 11, 2024",
+    url: "https://www.coursera.org/account/accomplishments/verify/87SUDH8K7DVP",
+    image: "/images/certs/7.jpg"
+  },
+  {
+    title: "Python (Basic)",
+    provider: "HackerRank",
+    date: "September 30, 2023",
+    url: "https://www.hackerrank.com/certificates/31f77a188bb4",
+    image: "/images/certs/5.png"
+  },
+  {
+    title: "Using Python to Interact with the Operating System",
+    provider: "Google",
+    date: "July 1, 2023",
+    url: "https://www.coursera.org/account/accomplishments/verify/LB7Q2FTA4H64",
+    image: "/images/certs/8.jpg"
+  },
+  {
+    title: "Introduction to Cybersecurity Tools & Cyberattacks",
+    provider: "IBM",
+    date: "June 17, 2023",
+    url: "https://www.coursera.org/account/accomplishments/verify/VAZPAMMY5XGS",
+    image: "/images/certs/9.jpg"
+  },
+  {
+    title: "Programming with Python: Introduction for Beginners",
+    provider: "upGrad",
+    date: "April 24, 2023",
+    url: "https://upgrad.verification.givemycertificate.com/v/e39837e5-8e35-4156-ad0a-33cf62632ca8",
+    image: "/images/certs/10.png"
+  },
+  {
+    title: "Data Analysis Using Python",
+    provider: "University of Pennsylvania",
+    date: "March 9, 2023",
+    url: "https://www.coursera.org/account/accomplishments/verify/9ZF6F9Z3MUKW",
+    image: "/images/certs/11.jpg"
+  },
+  {
+    title: "Technical Support Fundamentals",
+    provider: "Google",
+    date: "December 21, 2022",
+    url: "https://www.coursera.org/account/accomplishments/verify/9ZF6F9Z3MUKW",
+    image: "/images/certs/12.jpg"
+  },
 ];
 
 export default function ProfileTabs() {
   const [activeTab, setActiveTab] = useState("skills");
+  const [certPage, setCertPage] = useState(1);
+  const CERTS_PER_PAGE = 4;
+  const totalCertPages = Math.ceil(
+    certificationsData.length / CERTS_PER_PAGE
+  );
+
+  const displayedCertificates = certificationsData.slice(
+    (certPage - 1) * CERTS_PER_PAGE,
+    certPage * CERTS_PER_PAGE
+  );
   const BG_IMAGE_URL = "/images/bg/skills_bg.png";
 
   const tabs = [
-    { id: "skills", label: "Skills", icon: TbCode },
+    { id: "skills", label: "Technical Skills", icon: TbCode },
     { id: "education", label: "Education", icon: TbSchool },
     { id: "certs", label: "Certifications", icon: TbCertificate },
     { id: "hobbies", label: "Off-Duty", icon: TbActivity },
     { id: "languages", label: "Languages", icon: TbMessageCircle },
   ];
+
+  useEffect(() => {
+    if (activeTab === "certs") {
+      setCertPage(1);
+    }
+  }, [activeTab]);
 
   return (
     <section 
@@ -276,41 +356,92 @@ export default function ProfileTabs() {
         )}
 
         {activeTab === "certs" && (
-        <div className="flex animate-[fadeIn_0.4s_ease-out] flex-col gap-4">
-            {certificationsData.map((cert, idx) => (
-            <div key={idx} className="group flex items-center justify-between border-b border-[var(--border-subtle)] py-5 last:border-0 last:pb-0">
-                
-                <div className="flex items-center gap-6">
-                {/* Year Indicator */}
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[2px] bg-[var(--bg-hover)] font-sans text-[10px] font-bold text-[var(--accent-cyan)]">
-                    {cert.date}
-                </div>
-                
-                {/* Title and Provider */}
-                <div className="flex flex-col">
-                    <h3 className="font-serif text-[16px] font-medium text-[var(--foreground)]">
-                    {cert.title}
-                    </h3>
-                    <span className="font-sans text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
-                    {cert.provider}
-                    </span>
-                </div>
+          <>
+          <div className="grid animate-[fadeIn_0.4s_ease-out] gap-6 md:grid-cols-2">
+            {displayedCertificates.map((cert, idx) => (
+              <div
+                key={idx}
+                className="group overflow-hidden rounded-[2px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] transition-all duration-300 hover:border-[var(--accent-cyan)]"
+              >
+                {/* Certificate Image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
-                {/* Verification Link (Visible on hover) */}
-                {cert.url && (
-                <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden text-[10px] font-bold tracking-widest text-[var(--accent-blue)] uppercase transition-colors group-hover:block hover:text-[var(--accent-cyan)]"
-                >
-                    Verify
-                </a>
-                )}
-            </div>
+                {/* Content */}
+                <div className="space-y-3 p-5">
+                  <div className="flex items-center justify-between">
+                    <span className="rounded-[2px] bg-[var(--bg-hover)] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--accent-cyan)]">
+                      {cert.date}
+                    </span>
+
+                    {cert.url && (
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-[var(--accent-blue)] transition-colors hover:text-[var(--accent-cyan)]"
+                      >
+                        Verify
+                        <TbExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif text-lg font-medium text-[var(--foreground)]">
+                      {cert.title}
+                    </h3>
+
+                    <p className="mt-1 font-sans text-[11px] uppercase tracking-widest text-[var(--text-muted)]">
+                      {cert.provider}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
-        </div>
+          </div>
+          {totalCertPages > 1 && (
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <button
+                onClick={() => setCertPage((p) => Math.max(1, p - 1))}
+                disabled={certPage === 1}
+                className="rounded-[2px] border border-[var(--border-subtle)] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] transition-colors hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Previous
+              </button>
+
+              {Array.from({ length: totalCertPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCertPage(index + 1)}
+                  className={`flex h-9 w-9 items-center justify-center rounded-[2px] border text-xs font-semibold transition-all ${
+                    certPage === index + 1
+                      ? "border-[var(--accent-cyan)] bg-[var(--accent-cyan)] text-[var(--background)]"
+                      : "border-[var(--border-subtle)] text-[var(--text-muted)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+
+              <button
+                onClick={() =>
+                  setCertPage((p) => Math.min(totalCertPages, p + 1))
+                }
+                disabled={certPage === totalCertPages}
+                className="rounded-[2px] border border-[var(--border-subtle)] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] transition-colors hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </>
         )}
         </div>
       </div>

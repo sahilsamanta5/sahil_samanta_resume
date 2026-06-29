@@ -17,13 +17,18 @@ export default function ShowcaseSection() {
     useState<ShowcaseItem | null>(null);
 
   const filteredItems = useMemo(() => {
-    if (activeFilter === "All") {
-      return showcaseData;
-    }
+    switch (activeFilter) {
+      case "Featured":
+        return showcaseData.filter((item) => item.featured);
 
-    return showcaseData.filter(
-      (item) => item.category === activeFilter
-    );
+      case "All":
+        return showcaseData;
+
+      default:
+        return showcaseData.filter(
+          (item) => item.category === activeFilter
+        );
+    }
   }, [activeFilter]);
 
   return (
