@@ -71,9 +71,9 @@ a:hover {
   color: var(--accent-blue);
 }
 
-button:hover, .btn:hover {
-  filter: brightness(1.1); /* Lightens the button slightly */
-  color: var(--background) !important; /* Forces text to dark on hover */
+button:hover,
+.btn:hover {
+  filter: brightness(1.1);
 }
 
 /* Skill tags / badges */

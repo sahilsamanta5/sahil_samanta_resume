@@ -116,7 +116,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
           <div className="relative shrink-0 w-[100px] h-[100px] transition-all duration-300 group-[.is-collapsed]/sidebar:w-[32px] group-[.is-collapsed]/sidebar:h-[32px]">
             <div className="absolute inset-[-4px] border border-[var(--border)] rounded-[2px] opacity-70 pointer-events-none transition-all duration-300 group-[.is-collapsed]/sidebar:inset-[-3px] [clip-path:polygon(0_0,10px_0,10px_1px,1px_1px,1px_10px,0_10px,0_100%,0_calc(100%-10px),1px_calc(100%-10px),1px_calc(100%-1px),10px_calc(100%-1px),10px_100%,100%_100%,calc(100%-10px)_100%,calc(100%-10px)_calc(100%-1px),calc(100%-1px)_calc(100%-1px),calc(100%-1px)_calc(100%-10px),100%_calc(100%-10px),100%_0,calc(100%-10px)_0,calc(100%-10px)_1px,calc(100%-1px)_1px,calc(100%-1px)_10px,100%_10px)]" />
             <img
-                src="/images/sahil.png"
+                src="/images/sahil2.jpg"
                 alt="Sahil Samanta"
                 className="
                     h-full
@@ -132,7 +132,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
             </div>
 
             <div className="font-mono text-[9px] tracking-widest text-[var(--text-faint)] whitespace-nowrap">
-                SOFTWARE ENGINEER
+                BACKEND SOFTWARE ENGINEER
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              OPEN TO OPPORTUNITIES
+              AVAILABLE WORLDWIDE
             </span>
           </div>
 
@@ -198,7 +198,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              4+ YRS DEV EXPERIENCE
+              CODING SINCE 2021
             </span>
 
             {/* ── Work Experience ── */}
@@ -219,7 +219,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              2+ YRS WORK EXPERIENCE
+              2+ YEARS IN INDUSTRY
             </span>
           </div>
         </div>

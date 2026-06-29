@@ -122,7 +122,7 @@ export default function Hero() {
                     <span className="font-sans text-[10px] font-bold tracking-widest text-[var(--accent-cyan)] uppercase">Recruitment Status</span>
                   </div>
                   <p className="font-sans text-[13px] font-medium leading-relaxed text-[var(--foreground)] mt-1">
-                    Hi! I'm based in Kolkata, India and currently open to new <span className="text-[var(--accent-blue)]">full-time</span> engineering roles & opportunities.
+                    Based in <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Open to full-time, remote, hybrid, and relocation opportunities.
                   </p>
                </div>
             </div>

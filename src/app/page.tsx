@@ -9,6 +9,7 @@ import ProfileTabs from "../components/profile";
 import ProjectsSection from "../components/projects";
 import ShowcaseSection from "../components/projects";
 import ContactSection from "../components/ContactSection";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export default function Home() {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,6 +28,7 @@ export default function Home() {
         <About />
         <ShowcaseSection />
         <ContactSection />
+        <LanguageSwitcher />
       </main>
     </div>
   );
