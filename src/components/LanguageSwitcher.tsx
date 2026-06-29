@@ -5,7 +5,7 @@ import {
   TbChevronUp,
 } from "react-icons/tb";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   useLanguage,
@@ -18,8 +18,21 @@ export default function LanguageSwitcher() {
     setLanguage,
   } = useLanguage();
 
+  const [search, setSearch] = useState("");
+
   const [open, setOpen] =
     useState(false);
+
+  const filteredLanguages = useMemo(() => {
+    const q = search.toLowerCase();
+
+    return languages.filter(
+      (lang) =>
+        lang.name.toLowerCase().includes(q) ||
+        lang.nativeName.toLowerCase().includes(q) ||
+        lang.code.toLowerCase().includes(q)
+    );
+  }, [languages, search]);
 
   return (
     <div className="fixed bottom-8 right-8 z-[999]">
@@ -27,21 +40,40 @@ export default function LanguageSwitcher() {
 
         {open && (
           <div
-            className="
-              absolute
-              bottom-full
-              right-0
-              mb-3
-              w-56
-              overflow-hidden
-              rounded-[2px]
-              border
-              border-[var(--border-subtle)]
-              bg-[var(--bg-surface)]
-              shadow-2xl
+              className="
+                absolute
+                bottom-full
+                right-0
+                mb-3
+                w-64
+                overflow-hidden
+                rounded-[2px]
+                border
+                border-[var(--border-subtle)]
+                bg-[var(--bg-surface)]
+                shadow-2xl
             "
-          >
-            {languages.map((lang) => (
+            >
+              <div className="border-b border-[var(--border-subtle)] p-3">
+                <input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search language..."
+                  className="
+                    w-full
+                    rounded-[2px]
+                    border
+                    border-[var(--border-subtle)]
+                    bg-transparent
+                    px-3
+                    py-2
+                    text-sm
+                    outline-none
+                    focus:border-[var(--accent-cyan)]
+                  "
+                />
+              </div>
+            {filteredLanguages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => {
