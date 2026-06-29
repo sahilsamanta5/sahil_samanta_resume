@@ -73,38 +73,40 @@ export default function LanguageSwitcher() {
                   "
                 />
               </div>
-            {filteredLanguages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => {
-                  setLanguage(lang.code);
-                  setOpen(false);
-                }}
-               className={`
-                flex
-                w-full
-                items-center
-                justify-between
-                px-5
-                py-3
-                transition-colors
+              <div className="max-h-72 overflow-y-auto">
+                {filteredLanguages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setOpen(false);
+                    }}
+                  className={`
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+                    px-5
+                    py-3
+                    transition-colors
 
-                ${
-                    language.code === lang.code
-                    ? "bg-[var(--accent-glow)] text-[var(--accent-cyan)]"
-                    : "text-[var(--foreground)] hover:bg-[var(--bg-hover)] hover:text-[var(--accent-cyan)]"
-                }
-                `}
-              >
-                <span>
-                  {lang.nativeName}
-                </span>
+                    ${
+                        language.code === lang.code
+                        ? "bg-[var(--accent-glow)] text-[var(--accent-cyan)]"
+                        : "text-[var(--foreground)] hover:bg-[var(--bg-hover)] hover:text-[var(--accent-cyan)]"
+                    }
+                    `}
+                  >
+                    <span>
+                      {lang.nativeName}
+                    </span>
 
-                <span className="text-xs text-[var(--text-muted)]">
-                  {lang.name}
-                </span>
-              </button>
-            ))}
+                    <span className="text-xs text-[var(--text-muted)]">
+                      {lang.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
           </div>
         )}
 

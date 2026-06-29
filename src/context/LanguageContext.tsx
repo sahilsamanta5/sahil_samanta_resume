@@ -38,101 +38,101 @@ export const LANGUAGES: Language[] = [
     name: "Hindi",
     nativeName: "हिन्दी"
   },
-  // {
-  //   code: "bn",
-  //   name: "Bengali",
-  //   nativeName: "বাংলা"
-  // },
-  // {
-  //   code: "fil",
-  //   name: "Filipino",
-  //   nativeName: "Filipino"
-  // },
-  // {
-  //   code: "th",
-  //   name: "Thai",
-  //   nativeName: "ไทย"
-  // },
-  // {
-  //   code: "ko",
-  //   name: "Korean",
-  //   nativeName: "한국어"
-  // },
-  // {
-  //   code: "zh",
-  //   name: "Chinese",
-  //   nativeName: "中文"
-  // },
-  // {
-  //   code: "ms",
-  //   name: "Malay",
-  //   nativeName: "Bahasa Melayu"
-  // },
-  // {
-  //   code: "lt",
-  //   name: "Lithuanian",
-  //   nativeName: "Lietuvių"
-  // },
-  // {
-  //   code: "et",
-  //   name: "Estonian",
-  //   nativeName: "Eesti"
-  // },
-  // {
-  //   code: "cs",
-  //   name: "Czech",
-  //   nativeName: "Čeština"
-  // },
-  // {
-  //   code: "pl",
-  //   name: "Polish",
-  //   nativeName: "Polski"
-  // },
-  // {
-  //   code: "fr",
-  //   name: "French",
-  //   nativeName: "Français"
-  // },
-  // {
-  //   code: "es",
-  //   name: "Spanish",
-  //   nativeName: "Español"
-  // },
-  // {
-  //   code: "pt",
-  //   name: "Portuguese",
-  //   nativeName: "Português"
-  // },
-  // {
-  //   code: "it",
-  //   name: "Italian",
-  //   nativeName: "Italiano"
-  // },
-  // {
-  //   code: "nl",
-  //   name: "Dutch",
-  //   nativeName: "Nederlands"
-  // },
-  // {
-  //   code: "sv",
-  //   name: "Swedish",
-  //   nativeName: "Svenska"
-  // },
-  // {
-  //   code: "da",
-  //   name: "Danish",
-  //   nativeName: "Dansk"
-  // },
-  // {
-  //   code: "fi",
-  //   name: "Finnish",
-  //   nativeName: "Suomi"
-  // },
-  // {
-  //   code: "no",
-  //   name: "Norwegian",
-  //   nativeName: "Norsk"
-  // },
+  {
+    code: "bn",
+    name: "Bengali",
+    nativeName: "বাংলা"
+  },
+  {
+    code: "fil",
+    name: "Filipino",
+    nativeName: "Filipino"
+  },
+  {
+    code: "th",
+    name: "Thai",
+    nativeName: "ไทย"
+  },
+  {
+    code: "ko",
+    name: "Korean",
+    nativeName: "한국어"
+  },
+  {
+    code: "zh",
+    name: "Chinese",
+    nativeName: "中文"
+  },
+  {
+    code: "ms",
+    name: "Malay",
+    nativeName: "Bahasa Melayu"
+  },
+  {
+    code: "lt",
+    name: "Lithuanian",
+    nativeName: "Lietuvių"
+  },
+  {
+    code: "et",
+    name: "Estonian",
+    nativeName: "Eesti"
+  },
+  {
+    code: "cs",
+    name: "Czech",
+    nativeName: "Čeština"
+  },
+  {
+    code: "pl",
+    name: "Polish",
+    nativeName: "Polski"
+  },
+  {
+    code: "fr",
+    name: "French",
+    nativeName: "Français"
+  },
+  {
+    code: "es",
+    name: "Spanish",
+    nativeName: "Español"
+  },
+  {
+    code: "pt",
+    name: "Portuguese",
+    nativeName: "Português"
+  },
+  {
+    code: "it",
+    name: "Italian",
+    nativeName: "Italiano"
+  },
+  {
+    code: "nl",
+    name: "Dutch",
+    nativeName: "Nederlands"
+  },
+  {
+    code: "sv",
+    name: "Swedish",
+    nativeName: "Svenska"
+  },
+  {
+    code: "da",
+    name: "Danish",
+    nativeName: "Dansk"
+  },
+  {
+    code: "fi",
+    name: "Finnish",
+    nativeName: "Suomi"
+  },
+  {
+    code: "no",
+    name: "Norwegian",
+    nativeName: "Norsk"
+  },
 ];
 
 type Translation = typeof translations.en;
