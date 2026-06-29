@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import { TbArrowRight, TbDownload } from "react-icons/tb";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+  const { translation } = useLanguage();
   return (
     <section 
       id="home" 
       // Changed to items-center with py-24 to prevent the top from ever getting cut off on smaller screens
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[var(--background)] px-6 py-24 md:px-16 lg:px-24"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[var(--background)] px-5 py-20 sm:px-6 sm:py-24 md:px-16 lg:px-24"
     >
       
       {/* ── Background Decorative Layers ── */}
@@ -28,65 +30,55 @@ export default function Hero() {
 
       {/* ── Main Content Container ── */}
       {/* Solid flex layout: Stacks on mobile, sits perfectly side-by-side on desktop */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-16 lg:flex-row lg:gap-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-14 lg:flex-row lg:gap-8">
         
         {/* ── LEFT COLUMN: Typography & Actions ── */}
-        <div className="flex w-full flex-col space-y-10 lg:w-[55%] xl:w-[60%]">
+        <div className="flex w-full flex-col space-y-10 text-center lg:w-[55%] lg:text-left xl:w-[60%]">
           
           {/* ── TOP LOGO & STATUS BLOCK ── */}
           <div className="flex flex-col">
             
             {/* Logo Container */}
-            <div className="relative w-[40vw] max-w-[300px]">
+            <div className="relative mx-auto w-[70vw] max-w-[300px] sm:w-[50vw] lg:mx-0 lg:w-[40vw]">
                 <Image 
                     src="/images/logo/sahil_resume_en_logo_3.png" 
-                    alt="Sahil Samanta Logo" 
+                    alt={translation.header.name}
                     width={1000} 
                     height={1000} 
-                    sizes="(max-width: 480px) 40vw, 300px" 
+                    sizes="(max-width:640px) 70vw,
+                    (max-width:1024px) 50vw,
+                    40vw"
                     className="w-full h-auto object-contain rounded-[2px]" 
                     priority
                 />
             </div>
             {/* Status Indicator */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 lg:justify-start">
               <div className="h-[1px] w-8 bg-[var(--accent-cyan)]" />
               <span className="font-sans text-[11px] font-medium tracking-[0.16em] text-[var(--accent-cyan)] uppercase">
-                Backend Software Engineer
+                {translation.header.position}
               </span>
             </div>
             
           </div>
 
           <div className="space-y-6">
-            <h2 className="font-serif text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl leading-[1.05]">
-              <span className="block whitespace-nowrap">
-                Building{" "}
-                <span className="text-[var(--accent-cyan)]">
-                  scalable backend systems
-                </span>
-              </span>
-
-              <span className="block mt-2 whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                  Exploring
-                </span>{" "}
-                AI & game development
-              </span>
+            <h2 className="font-serif text-3xl font-semibold leading-[1.05] tracking-tight text-[var(--foreground)] sm:text-4xl md:text-5xl lg:text-6xl">
+              {translation.hero.title()}
             </h2>
 
-            <p className="max-w-xl font-sans text-[15px] leading-relaxed text-[var(--text-muted)] sm:text-[16px]">
-              Backend Software Engineer specializing in scalable APIs, cloud-native applications, and modern backend architecture using Python, Django, and FastAPI. Passionate about AI, distributed systems, and building software that scales.
+            <p className="mx-auto max-w-xl font-sans text-[15px] leading-relaxed text-[var(--text-muted)] sm:text-[16px] lg:mx-0">
+              {translation.hero.para}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 pt-2">
+          <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <a
                 href="#showcase"
-                className="group relative flex items-center gap-3 overflow-hidden rounded-[2px] border border-[var(--accent-cyan)]/60 bg-[var(--accent-glow)] px-8 py-4 font-sans text-xs font-semibold tracking-widest text-[var(--accent-cyan)] transition-all duration-300 hover:border-[var(--accent-cyan)]"
+                className="group relative flex w-full justify-center items-center gap-3 sm:w-auto overflow-hidden rounded-[2px] border border-[var(--accent-cyan)]/60 bg-[var(--accent-glow)] px-8 py-4 font-sans text-xs font-semibold tracking-widest text-[var(--accent-cyan)] transition-all duration-300 hover:border-[var(--accent-cyan)]"
             >
                 <span className="relative z-10 uppercase transition-colors duration-300 group-hover:text-[var(--background)]">
-                    Explore My Works
+                    {translation.hero.cta1}
                 </span>
 
                 <TbArrowRight className="relative z-10 text-lg transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--background)]" />
@@ -98,9 +90,9 @@ export default function Hero() {
               href="/documents/resume/sahil_samanta_resume_v1.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-4 py-4 rounded-[2px] font-sans text-xs font-semibold tracking-widest text-[var(--text-muted)] transition-colors hover:text-[var(--foreground)] hover:bg-[var(--bg-hover)] uppercase"
+              className="group flex w-full justify-center items-center gap-3 sm:w-auto px-4 py-4 rounded-[2px] font-sans text-xs font-semibold tracking-widest text-[var(--text-muted)] transition-colors hover:text-[var(--foreground)] hover:bg-[var(--bg-hover)] uppercase"
             >
-              <span>Download Resume</span>
+              <span>{translation.hero.cta2}</span>
               <TbDownload className="text-[18px] text-[var(--text-faint)] transition-colors group-hover:text-[var(--accent-cyan)]" />
             </a>
           </div>        
@@ -119,10 +111,10 @@ export default function Hero() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-cyan)] opacity-75"></span>
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-cyan)]"></span>
                     </div>
-                    <span className="font-sans text-[10px] font-bold tracking-widest text-[var(--accent-cyan)] uppercase">Recruitment Status</span>
+                    <span className="font-sans text-[10px] font-bold tracking-widest text-[var(--accent-cyan)] uppercase">{translation.hero.status.head}</span>
                   </div>
                   <p className="font-sans text-[13px] font-medium leading-relaxed text-[var(--foreground)] mt-1">
-                    Based in <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Open to full-time, remote, hybrid, and relocation opportunities.
+                    {translation.hero.status.stat()}
                   </p>
                </div>
             </div>

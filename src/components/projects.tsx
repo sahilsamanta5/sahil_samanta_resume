@@ -4,28 +4,30 @@ import MediaModal from "./showcase/MediaModal";
 import ShowcaseCard from "./showcase/ShowcaseCard";
 
 import {
-  showcaseData,
-  filters,
   ShowcaseItem,
 } from "./showcase/showcaseData";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "@/src/translations";
 
 export default function ShowcaseSection() {
   const [activeFilter, setActiveFilter] =
-    useState("All");
+    useState("Featured");
 
   const [selectedItem, setSelectedItem] =
     useState<ShowcaseItem | null>(null);
 
+  const { translation } = useLanguage();
+
   const filteredItems = useMemo(() => {
     switch (activeFilter) {
       case "Featured":
-        return showcaseData.filter((item) => item.featured);
+        return translation.project.projects.filter((item) => item.featured);
 
       case "All":
-        return showcaseData;
+        return translation.project.projects;
 
       default:
-        return showcaseData.filter(
+        return translation.project.projects.filter(
           (item) => item.category === activeFilter
         );
     }
@@ -49,7 +51,7 @@ export default function ShowcaseSection() {
               text-[var(--accent-cyan)]
             "
           >
-            Showcase
+            {translation.project.title}
           </span>
 
           <h2
@@ -60,7 +62,7 @@ export default function ShowcaseSection() {
               text-[var(--foreground)]
             "
           >
-            Work & Passions
+            {translation.project.subtitle}
           </h2>
 
           <p
@@ -71,8 +73,7 @@ export default function ShowcaseSection() {
               text-[var(--text-muted)]
             "
           >
-            Software Engineering • AI • Music •
-            Creativity • Certificates
+            {translation.project.para}
           </p>
 
           <div
@@ -97,7 +98,7 @@ export default function ShowcaseSection() {
             gap-3
           "
         >
-          {filters.map((filter) => (
+          {translations.en.project.filters.map((filter, idx) => (
             <button
               key={filter}
               onClick={() =>
@@ -120,7 +121,7 @@ export default function ShowcaseSection() {
                 }
               `}
             >
-              {filter}
+              {translation.project.filters[idx]}
             </button>
           ))}
         </div>

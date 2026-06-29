@@ -9,6 +9,8 @@ import {
   ReactNode,
 } from "react";
 
+import { translations } from "@/src/translations";
+
 export interface Language {
   code: string;
   name: string;
@@ -22,27 +24,18 @@ export const LANGUAGES: Language[] = [
     nativeName: "English",
   },
   {
-    code: "ja",
+    code: "jp",
     name: "Japanese",
     nativeName: "日本語",
   },
-
-  // Future
-  // {
-  //   code: "ko",
-  //   name: "Korean",
-  //   nativeName: "한국어",
-  // },
-  // {
-  //   code: "lt",
-  //   name: "Lithuanian",
-  //   nativeName: "Lietuvių",
-  // },
 ];
+
+type Translation = typeof translations.en;
 
 interface LanguageContextType {
   language: Language;
   languages: Language[];
+  translation: Translation;
   setLanguage: (code: string) => void;
 }
 
@@ -58,14 +51,17 @@ export function LanguageProvider({
     useState(LANGUAGES[0]);
 
   useEffect(() => {
-    const saved =
-      localStorage.getItem("language");
+    const saved = localStorage.getItem("language");
 
     const found = LANGUAGES.find(
       (l) => l.code === saved
     );
 
-    if (found) setCurrentLanguage(found);
+    if (found) {
+      setCurrentLanguage(found);
+    } else {
+      setCurrentLanguage(LANGUAGES[0])
+    }
   }, []);
 
   const setLanguage = (code: string) => {
@@ -88,6 +84,11 @@ export function LanguageProvider({
       language,
       languages: LANGUAGES,
       setLanguage,
+
+      translation:
+      translations[
+        language.code as keyof typeof translations
+      ] ?? translations.en,
     }),
     [language]
   );
@@ -100,13 +101,13 @@ export function LanguageProvider({
 }
 
 export function useLanguage() {
-  const context =
-    useContext(LanguageContext);
+  const context = useContext(LanguageContext);
 
-  if (!context)
+  if (!context) {
     throw new Error(
       "LanguageProvider missing."
     );
+  }
 
   return context;
 }

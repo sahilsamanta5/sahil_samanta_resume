@@ -1,15 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { TbHome, TbUser, TbTerminal2, TbLayoutGrid, TbMail, TbBrandLinkedin, TbChevronsLeft } from "react-icons/tb";
+import { TbBrandLinkedin, TbChevronsLeft } from "react-icons/tb";
+import { useLanguage } from "@/src/context/LanguageContext";
 
-const NAV = [
-  { label: "HOME",     href: "#home",     icon: TbHome },
-  { label: "SKILLS",   href: "#profile",   icon: TbTerminal2 },
-  { label: "ABOUT",    href: "#about",    icon: TbUser },
-  { label: "PROJECTS", href: "#showcase", icon: TbLayoutGrid },
-  { label: "CONTACT",  href: "#contact",  icon: TbMail },
-];
 
 const SOCIALS = [
   { label: "LINKEDIN", href: "https://www.linkedin.com/in/sahilsamanta/", icon: TbBrandLinkedin },
@@ -21,22 +15,26 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
-  const [active, setActive] = useState("HOME");
+  const { translation } = useLanguage();
+  const [active, setActive] =
+  useState("#home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 900px)");
-    const handler = (e: MediaQueryList | MediaQueryListEvent) => setCollapsed(e.matches);
-    
-    // Set initial state
-    handler(mq);
-    
+
+    const handler = (e: MediaQueryListEvent) => {
+      setCollapsed(e.matches);
+    };
+
     mq.addEventListener("change", handler);
+
     return () => mq.removeEventListener("change", handler);
   }, [setCollapsed]);
 
-  const handleNav = (label: string) => {
-    setActive(label);
+  const handleNav = (href: string) => {
+    setActive(href);
     setMobileOpen(false);
   };
 
@@ -45,9 +43,9 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
     const scrollPosition =
       window.scrollY + window.innerHeight / 3;
 
-    let currentSection = NAV[0].label;
+    let currentSection = "#home";
 
-    NAV.forEach((nav) => {
+    translation.header.nav.forEach((nav) => {
       const section = document.querySelector(
         nav.href
       ) as HTMLElement | null;
@@ -57,7 +55,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
       if (
         scrollPosition >= section.offsetTop
       ) {
-        currentSection = nav.label;
+        currentSection = nav.href;
       }
     });
 
@@ -117,7 +115,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
             <div className="absolute inset-[-4px] border border-[var(--border)] rounded-[2px] opacity-70 pointer-events-none transition-all duration-300 group-[.is-collapsed]/sidebar:inset-[-3px] [clip-path:polygon(0_0,10px_0,10px_1px,1px_1px,1px_10px,0_10px,0_100%,0_calc(100%-10px),1px_calc(100%-10px),1px_calc(100%-1px),10px_calc(100%-1px),10px_100%,100%_100%,calc(100%-10px)_100%,calc(100%-10px)_calc(100%-1px),calc(100%-1px)_calc(100%-1px),calc(100%-1px)_calc(100%-10px),100%_calc(100%-10px),100%_0,calc(100%-10px)_0,calc(100%-10px)_1px,calc(100%-1px)_1px,calc(100%-1px)_10px,100%_10px)]" />
             <img
                 src="/images/sahil2.jpg"
-                alt="Sahil Samanta"
+                alt={translation.header.name}
                 className="
                     h-full
                     w-full
@@ -128,11 +126,11 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
           </div>
           <div className="flex flex-col items-center gap-1 transition-all duration-300 max-h-[80px] opacity-100 group-[.is-collapsed]/sidebar:max-h-0 group-[.is-collapsed]/sidebar:opacity-0 group-[.is-collapsed]/sidebar:overflow-hidden">
             <div className="font-serif text-[13px] font-semibold tracking-wide text-[var(--foreground)] uppercase whitespace-nowrap">
-                Sahil Samanta
+                {translation.header.name}
             </div>
 
             <div className="font-mono text-[9px] tracking-widest text-[var(--text-faint)] whitespace-nowrap">
-                BACKEND SOFTWARE ENGINEER
+                {translation.header.position}
             </div>
           </div>
         </div>
@@ -175,7 +173,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              AVAILABLE WORLDWIDE
+              {translation.header.availability}
             </span>
           </div>
 
@@ -198,7 +196,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              CODING SINCE 2021
+              {translation.header.since}
             </span>
 
             {/* ── Work Experience ── */}
@@ -219,15 +217,15 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 }
               `}
             >
-              2+ YEARS IN INDUSTRY
+              {translation.header.experience}
             </span>
           </div>
         </div>
 
         {/* ── Nav ── */}
         <nav className="flex flex-col flex-1 gap-1 px-3 py-2 overflow-hidden">
-          {NAV.map((n) => {
-            const isActive = active === n.label;
+          {translation.header.nav.map((n) => {
+            const isActive = active === n.href;
             const IconComponent = n.icon;
             return (
               <a
@@ -270,7 +268,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                     });
                     }
 
-                    handleNav(n.label);
+                    handleNav(n.href);
                 }}
               >
                 <div className={`absolute left-0 top-[20%] bottom-[20%] w-[2px] rounded-r-[1px] bg-[var(--accent-cyan)] shadow-[0_0_8px_var(--accent-glow)] transition-opacity duration-200 ${isActive ? "opacity-100" : "opacity-0"}`} />
@@ -311,7 +309,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
 
         {/* ── Socials ── */}
         <div className="flex flex-col shrink-0 gap-1 px-3 pb-3">
-          {SOCIALS.map((s) => {
+          {translation.header.socials.map((s) => {
              const IconComponent = s.icon;
              return (
               <a
@@ -337,7 +335,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
         >
           <TbChevronsLeft className={`shrink-0 ml-[3px] group-[.is-collapsed]/sidebar:ml-0 text-[18px] text-[var(--text-muted)] transition-all duration-300 group-hover/toggle:text-[var(--accent-cyan)] ${collapsed ? "rotate-180" : ""}`} />
           <span className="ml-[13px] font-sans text-[9px] font-semibold tracking-[0.2em] text-[var(--text-faint)] whitespace-nowrap overflow-hidden transition-all duration-300 max-w-[200px] opacity-100 group-[.is-collapsed]/sidebar:max-w-0 group-[.is-collapsed]/sidebar:opacity-0 group-[.is-collapsed]/sidebar:ml-0 group-hover/toggle:text-[var(--text-muted)]">
-            COLLAPSE
+            {translation.header.collapseText}
           </span>
         </button>
       </aside>

@@ -16,6 +16,8 @@ export interface ShowcaseItem {
     | "Music"
     | "Creative"
 
+  categoryLabel?: string;
+
   type: MediaType;
 
   thumbnail: string;

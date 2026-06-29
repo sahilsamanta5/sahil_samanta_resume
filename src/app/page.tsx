@@ -12,7 +12,7 @@ import ContactSection from "../components/ContactSection";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export default function Home() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <div className="flex min-h-screen bg-[var(--background)] text-[var(--foreground)]">

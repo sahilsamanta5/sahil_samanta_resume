@@ -3,8 +3,10 @@ import {
   TbBrandLinkedin,
   TbArrowRight,
 } from "react-icons/tb";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ContactSection() {
+    const { translation } = useLanguage()
   return (
     <section
         id="contact"
@@ -52,11 +54,11 @@ export default function ContactSection() {
         />
       <div className="text-center">
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--accent-cyan)]">
-          Contact
+          {translation.contact.tagline}
         </span>
 
         <h2 className="mt-4 font-serif text-5xl text-[var(--foreground)]">
-          The Journey Continues
+          {translation.contact.heading}
         </h2>
 
         <div className="mx-auto mt-8 h-px w-24 bg-[var(--accent-cyan)]/40" />
@@ -72,29 +74,24 @@ export default function ContactSection() {
             border
             border-[var(--border-subtle)]
             bg-[var(--bg-card)]/20
-            p-10
+            px-5 py-8 sm:px-8 sm:py-10 lg:p-10
             backdrop-blur-sm
         "
         >
         {/* Glow */}
 
-        <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[var(--accent-glow)] blur-3xl" />
+        <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[var(--accent-glow)] blur-3xl" />
 
         <div className="relative z-10 text-center">
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
-            If you're looking for a software engineer
-            who enjoys building practical solutions,
-            scalable systems, and meaningful digital
-            experiences, I'd be glad to hear from you.
+            <p className="mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-[var(--text-muted)]">
+                {translation.contact.intro}
             </p>
 
             <p className="mt-6 text-[var(--text-muted)]">
-            Currently available for software engineering
-            opportunities, freelance projects, and
-            technical collaborations.
+                {translation.contact.availability}
             </p>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
             <a
                 href="mailto:sahilsamanta5@gmail.com"
                 className="
@@ -113,7 +110,7 @@ export default function ContactSection() {
                 "
             >
                 <TbMail />
-                sahilsamanta5@gmail.com
+                {translation.contact.cta.email}
             </a>
 
             <a
@@ -136,13 +133,13 @@ export default function ContactSection() {
                 "
             >
                 <TbBrandLinkedin />
-                LinkedIn
+                {translation.contact.cta.linkedin}
             </a>
             </div>
 
             <div className="mt-12">
-            <p className="font-serif text-2xl italic text-[var(--text-faint)]">
-                Every project starts with a conversation.
+            <p className="font-serif text-xl sm:text-2xl italic text-[var(--text-faint)]">
+                {translation.contact.quote}
             </p>
             </div>
         </div>

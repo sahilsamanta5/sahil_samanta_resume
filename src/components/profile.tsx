@@ -3,201 +3,24 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { 
-  TbCode, 
-  TbSchool, 
-  TbActivity, 
-  TbMessageCircle,
-  TbServer,
-  TbLayoutDashboard,
-  TbDeviceGamepad2,
-  TbSettingsCode,
-  TbHeadphones,
-  TbMovie,
-  TbChefHat,
-  TbBrain,
-  TbWorld,
   TbExternalLink,
-  TbCertificate,
-  TbServer2,
-  TbDeviceDesktopCode,
-  TbDatabase,
-  TbCloudComputing,
-  TbTools,
-  TbHierarchy3,
-  TbMusic
 } from "react-icons/tb";
-
-// ── DATA STRUCTURES ──
-
-const skillsData = [
-  { category: "Programming Languages", icon: TbCode, skills: ["Python", "JavaScript", "TypeScript", "SQL", "C", "C#", "Java"] },
-  { category: "Backend Engineering", icon: TbServer2, skills: ["Django", "Django REST Framework (DRF)", "FastAPI", "Flask", "REST API Design", "GraphQL", "Payment Gateway Integration"] },
-  { category: "Frontend Engineering", icon: TbDeviceDesktopCode, skills: ["React", "Next.js", "React Native", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "AJAX"] },
-  { category: "Databases", icon: TbDatabase, skills: ["MySQL", "MongoDB", "Firebase Firestore", "SQLite3"] },
-  { category: "Cloud & DevOps", icon: TbCloudComputing, skills: ["Docker", "Linux", "Nginx", "PM2", "Jenkins", "AWS IAM", "AWS Lambda", "Google Cloud VM", "Firebase Hosting", "Seed.run"] },
-  { category: "Tools & Platforms", icon: TbTools, skills: ["Git", "GitHub", "Postman", "Jira", "Shopify GraphQL", "Magento", "Google Analytics 4 (GA4)", "Google Tag Manager (GTM)", "Looker Studio", "Firebase", "Dezgo AI API", "Canva", "Blender", "Unity", "Adobe Premiere Pro"] },
-  { category: "Concepts", icon: TbHierarchy3, skills: [ "RESTful Architecture", "Authentication & Authorization", "Role-Based Access Control (RBAC)", "MVC Architecture", "Responsive Design"]}
-];
-
-const educationData = [
-  {
-    degree: "Master of Computer Applications (MCA)",
-    institution: "Manipal University Jaipur",
-    timeline: "2026 - Present",
-    description:
-      "Currently pursuing a master's degree with a focus on software engineering, distributed systems, cloud computing, and modern application development."
-  },
-  {
-    degree: "Bachelor of Business Administration (BBA)",
-    institution: "Bharatiya Vidya Bhavan Institute of Management Science, Kolkata",
-    timeline: "2021 - 2024",
-    description:
-      "Graduated with a CGPA of 8.13/10. Developed strong analytical, problem-solving, and business management skills, providing valuable insight into designing software that aligns with real-world business needs."
-  }
-];
-
-const hobbiesData = [
-  {
-    title: "Game Development",
-    icon: TbDeviceGamepad2,
-    description:
-      "I enjoy learning Unity, C#, and game design by building small prototypes and studying gameplay mechanics, level design, and interactive systems."
-  },
-  {
-    title: "Music & Singing",
-    icon: TbMusic,
-    description:
-      "Singing is one of my favorite creative outlets. It helps me relax, improve focus, and maintain a healthy balance alongside software development."
-  },
-  {
-    title: "Cooking & Creativity",
-    icon: TbChefHat,
-    description:
-      "Cooking teaches patience, attention to detail, and continuous experimentation—qualities I also apply when designing and building software."
-  },
-  {
-    title: "Learning Languages & Culture",
-    icon: TbWorld,
-    description:
-      "I'm currently learning Japanese and enjoy exploring different cultures, technologies, and ideas through travel, books, and online communities."
-  }
-];
-
-const languagesData = [
-  { language: "English", proficiency: "Professional Working Proficiency" },
-  { language: "Hindi", proficiency: "Native / Bilingual Proficiency" },
-  { language: "Bengali", proficiency: "Native / Bilingual Proficiency" },
-  { language: "Japanese", proficiency: "Beginner (JLPT N5)" }
-];
-
-const certificationsData = [
-  {
-    title: "Applied AI Foundations",
-    provider: "OpenAI",
-    date: "June 21, 2026",
-    url: "https://academy.openai.com/home/certificate/cxq5gafs8e",
-    image: "/images/certs/1.jpg"
-  },
-  {
-    title: "AI Foundations",
-    provider: "OpenAI",
-    date: "June 21, 2026",
-    url: "https://academy.openai.com/home/certificate/zz2fnm47qb",
-    image: "/images/certs/2.jpg"
-  },
-  {
-    title: "AI For Everyone",
-    provider: "DeepLearning.AI",
-    date: "March 26, 2026",
-    url: "https://www.coursera.org/account/accomplishments/verify/30G7WVF7XUE0",
-    image: "/images/certs/3.jpeg"
-  },
-  {
-    title: "Introduction to Git and GitHub",
-    provider: "Google",
-    date: "August 26, 2024",
-    url: "https://www.coursera.org/account/accomplishments/verify/UX8XC6HVSQU6",
-    image: "/images/certs/4.jpeg"
-  },
-  {
-    title: "Introduction to Data Analytics",
-    provider: "IBM",
-    date: "April 13, 2024",
-    url: "https://www.coursera.org/account/accomplishments/verify/JXACTK5XY6L3",
-    image: "/images/certs/6.jpg"
-  },
-  {
-    title: "Introduction to Back-End Development",
-    provider: "Meta",
-    date: "March 11, 2024",
-    url: "https://www.coursera.org/account/accomplishments/verify/87SUDH8K7DVP",
-    image: "/images/certs/7.jpg"
-  },
-  {
-    title: "Python (Basic)",
-    provider: "HackerRank",
-    date: "September 30, 2023",
-    url: "https://www.hackerrank.com/certificates/31f77a188bb4",
-    image: "/images/certs/5.png"
-  },
-  {
-    title: "Using Python to Interact with the Operating System",
-    provider: "Google",
-    date: "July 1, 2023",
-    url: "https://www.coursera.org/account/accomplishments/verify/LB7Q2FTA4H64",
-    image: "/images/certs/8.jpg"
-  },
-  {
-    title: "Introduction to Cybersecurity Tools & Cyberattacks",
-    provider: "IBM",
-    date: "June 17, 2023",
-    url: "https://www.coursera.org/account/accomplishments/verify/VAZPAMMY5XGS",
-    image: "/images/certs/9.jpg"
-  },
-  {
-    title: "Programming with Python: Introduction for Beginners",
-    provider: "upGrad",
-    date: "April 24, 2023",
-    url: "https://upgrad.verification.givemycertificate.com/v/e39837e5-8e35-4156-ad0a-33cf62632ca8",
-    image: "/images/certs/10.png"
-  },
-  {
-    title: "Data Analysis Using Python",
-    provider: "University of Pennsylvania",
-    date: "March 9, 2023",
-    url: "https://www.coursera.org/account/accomplishments/verify/9ZF6F9Z3MUKW",
-    image: "/images/certs/11.jpg"
-  },
-  {
-    title: "Technical Support Fundamentals",
-    provider: "Google",
-    date: "December 21, 2022",
-    url: "https://www.coursera.org/account/accomplishments/verify/9ZF6F9Z3MUKW",
-    image: "/images/certs/12.jpg"
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ProfileTabs() {
   const [activeTab, setActiveTab] = useState("skills");
   const [certPage, setCertPage] = useState(1);
+  const { translation } = useLanguage();
   const CERTS_PER_PAGE = 4;
   const totalCertPages = Math.ceil(
-    certificationsData.length / CERTS_PER_PAGE
+    translation.profile.skills.certifications.length / CERTS_PER_PAGE
   );
 
-  const displayedCertificates = certificationsData.slice(
+  const displayedCertificates = translation.profile.skills.certifications.slice(
     (certPage - 1) * CERTS_PER_PAGE,
     certPage * CERTS_PER_PAGE
   );
   const BG_IMAGE_URL = "/images/bg/skills_bg.png";
-
-  const tabs = [
-    { id: "skills", label: "Technical Skills", icon: TbCode },
-    { id: "education", label: "Education", icon: TbSchool },
-    { id: "certs", label: "Certifications", icon: TbCertificate },
-    { id: "hobbies", label: "Off-Duty", icon: TbActivity },
-    { id: "languages", label: "Languages", icon: TbMessageCircle },
-  ];
 
   useEffect(() => {
     if (activeTab === "certs") {
@@ -223,7 +46,7 @@ export default function ProfileTabs() {
         
         {/* ── TAB NAVIGATION ── */}
         <div className="mb-12 flex w-full flex-wrap justify-center gap-2 rounded-[4px] border border-[var(--border-subtle)] bg-[var(--bg-surface)]/30 p-2 backdrop-blur-md sm:gap-4 sm:rounded-full">
-          {tabs.map((tab) => {
+          {translation.profile.tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             
@@ -254,7 +77,7 @@ export default function ProfileTabs() {
           {/* SKILLS TAB */}
           {activeTab === "skills" && (
             <div className="grid animate-[fadeIn_0.4s_ease-out] grid-cols-1 gap-8 md:grid-cols-2">
-              {skillsData.map((category, idx) => {
+              {translation.profile.skills.technical.map((category, idx) => {
                 const Icon = category.icon;
                 return (
                   <div key={idx} className="flex flex-col gap-4">
@@ -280,7 +103,7 @@ export default function ProfileTabs() {
           {/* EDUCATION TAB */}
           {activeTab === "education" && (
             <div className="flex animate-[fadeIn_0.4s_ease-out] flex-col gap-10">
-              {educationData.map((edu, idx) => (
+              {translation.profile.skills.education.map((edu, idx) => (
                 <div key={idx} className="relative flex flex-col gap-2 border-l-2 border-[var(--border-subtle)] pl-6 transition-colors hover:border-[var(--accent-blue)]">
                   <span className="absolute -left-[5px] top-1 h-2 w-2 rounded-full bg-[var(--accent-blue)]" />
                   <span className="font-sans text-[10px] font-bold tracking-widest text-[var(--accent-blue)] uppercase">{edu.timeline}</span>
@@ -295,7 +118,7 @@ export default function ProfileTabs() {
           {/* HOBBIES TAB */}
           {activeTab === "hobbies" && (
             <div className="grid animate-[fadeIn_0.4s_ease-out] grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-              {hobbiesData.map((hobby, idx) => {
+              {translation.profile.skills.hobbies.map((hobby, idx) => {
                 const Icon = hobby.icon;
                 return (
                   <div key={idx} className="group flex items-start gap-5">
@@ -322,7 +145,7 @@ export default function ProfileTabs() {
         {/* LANGUAGES TAB */}
         {activeTab === "languages" && (
         <div className="grid animate-[fadeIn_0.4s_ease-out] grid-cols-1 gap-6 sm:grid-cols-2">
-            {languagesData.map((lang, idx) => (
+            {translation.profile.skills.languages.map((lang, idx) => (
             <div
                 key={idx}
                 className="group relative overflow-hidden border border-[var(--border-subtle)] bg-gradient-to-br from-[var(--bg-card)]/60 via-[var(--bg-surface)]/40 to-transparent p-6 transition-all duration-500 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_30px_rgba(61,214,200,0.08)]"
@@ -387,7 +210,7 @@ export default function ProfileTabs() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-[var(--accent-blue)] transition-colors hover:text-[var(--accent-cyan)]"
                       >
-                        Verify
+                        {translation.profile.cta}
                         <TbExternalLink size={14} />
                       </a>
                     )}
@@ -413,7 +236,7 @@ export default function ProfileTabs() {
                 disabled={certPage === 1}
                 className="rounded-[2px] border border-[var(--border-subtle)] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] transition-colors hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Previous
+                {translation.profile.carouselCta.prev}
               </button>
 
               {Array.from({ length: totalCertPages }).map((_, index) => (
@@ -437,7 +260,7 @@ export default function ProfileTabs() {
                 disabled={certPage === totalCertPages}
                 className="rounded-[2px] border border-[var(--border-subtle)] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] transition-colors hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Next
+                {translation.profile.carouselCta.next}
               </button>
             </div>
           )}
