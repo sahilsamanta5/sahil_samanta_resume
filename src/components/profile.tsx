@@ -6,6 +6,7 @@ import {
   TbExternalLink,
 } from "react-icons/tb";
 import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 export default function ProfileTabs() {
   const [activeTab, setActiveTab] = useState("skills");
@@ -13,10 +14,10 @@ export default function ProfileTabs() {
   const { translation } = useLanguage();
   const CERTS_PER_PAGE = 4;
   const totalCertPages = Math.ceil(
-    translation.profile.skills.certifications.length / CERTS_PER_PAGE
+    translations.en.profile.skills.certifications.length / CERTS_PER_PAGE
   );
 
-  const displayedCertificates = translation.profile.skills.certifications.slice(
+  const displayedCertificates = translations.en.profile.skills.certifications.slice(
     (certPage - 1) * CERTS_PER_PAGE,
     certPage * CERTS_PER_PAGE
   );
