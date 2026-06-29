@@ -87,7 +87,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/documents/resume/sahil_samanta_resume_v1.pdf"
+              href="/documents/resume/en/sahil_samanta_resume_v1.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex w-full justify-center items-center gap-3 sm:w-auto px-4 py-4 rounded-[2px] font-sans text-xs font-semibold tracking-widest text-[var(--text-muted)] transition-colors hover:text-[var(--foreground)] hover:bg-[var(--bg-hover)] uppercase"
