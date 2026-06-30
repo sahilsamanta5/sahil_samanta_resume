@@ -4,7 +4,7 @@ import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
 export default {
     background: {
         hero: "/images/bg/sv/hero_bg.jpg",
-        contact: ""
+        contact: "/images/bg/sv/contact_bg.png"
     },
     header: {
         nav: [
