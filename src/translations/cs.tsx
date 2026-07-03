@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Aplikací",
+  "12+ Nasazení",
+  "25+ Projektů",
+  "40+ API",
+  "3+ E-commerce platforem",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Buduji{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    škálovatelné backend systémy
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Vyvinuto{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Zkoumám
-                </span>{" "}
-                AI a vývoj her
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend softwarový inženýr se specializací na škálovatelná API, cloud-native aplikace a moderní backend architekturu pomocí Pythonu, Djanga a FastAPI. Nadšenec do AI, distribuovaných systémů a tvorby softwaru, který roste společně s projektem.", //[cite: 1, 2]
         cta1: "Prozkoumat mou práci", //[cite: 1, 2]
         cta2: "Stáhnout životopis", //[cite: 1, 2]

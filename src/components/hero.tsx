@@ -16,14 +16,19 @@ export default function Hero() {
       
       {/* ── Background Decorative Layers ── */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-100 mix-blend-soft-light pointer-events-none"
+        className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${translation?.background?.hero || "/images/bg/hero_bg.png"})`,
         }}
       />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-0 bg-black/40" />
+
+      {/* Optional Gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/40 to-[var(--background)]" />
       <div className="pointer-events-none absolute left-[15%] top-[25%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-cyan)] opacity-[0.04] blur-[120px]" />
       <div className="pointer-events-none absolute right-[10%] bottom-[20%] h-[500px] w-[500px] translate-x-1/2 translate-y-1/2 rounded-full bg-[var(--accent-blue)] opacity-[0.03] blur-[100px]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [mask-image:linear-gradient(180deg,white,rgba(0, 0, 0, 0.5))]">
         <svg width="100%" height="100%">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -45,23 +50,14 @@ export default function Hero() {
           <div className="flex flex-col">
             
             {/* Logo Container */}
-            <div className="relative mx-auto w-[70vw] max-w-[300px] sm:w-[50vw] lg:mx-0 lg:w-[40vw]">
-                <Image 
-                    src="/images/logo/sahil_resume_en_logo_3.png" 
-                    alt={translation.header.name}
-                    width={1000} 
-                    height={1000} 
-                    sizes="(max-width:640px) 70vw,
-                    (max-width:1024px) 50vw,
-                    40vw"
-                    className="w-full h-auto object-contain rounded-[2px]" 
-                    priority
-                />
-            </div>
+            <div className="relative mx-auto w-fit lg:mx-0">
+              <h1 className="text-white text-4xl sm:text-6xl lg:text-8xl xl:text-7xl font-black tracking-[-0.05em] leading-none">
+                  {translation.header.name}
+              </h1>
+          </div>
             {/* Status Indicator */}
-            <div className="flex items-center justify-center gap-3 lg:justify-start">
-              <div className="h-[1px] w-8 bg-[var(--accent-cyan)]" />
-              <span className="font-sans text-[11px] font-medium tracking-[0.16em] text-[var(--accent-cyan)] uppercase">
+            <div className="flex items-center justify-center gap-3 lg:justify-start mt-6">
+              <span className="font-sans text-sm sm:text-xl lg:text-xl xl:text-base font-medium tracking-[0.16em] text-[var(--accent-cyan)] uppercase">
                 {translation.header.position}
               </span>
             </div>

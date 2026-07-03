@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Application",
+  "12+ Deployment",
+  "25+ Proyekto",
+  "40+ API",
+  "3+ E-Commerce Platform",
+  "5+ CMS",
+];
+
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Bumubuo ng{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    mga scalable na backend system
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Binuo{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Nag-e-explore ng
-                </span>{" "}
-                AI at game development
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend Software Engineer na dalubhasa sa mga scalable API, cloud-native na application, at modernong backend architecture gamit ang Python, Django, at FastAPI. May dedikasyon sa AI, distributed systems, at pagbuo ng software na kayang mag-scale.", //[cite: 1, 2]
         cta1: "Tingnan ang Aking mga Gawa", //[cite: 1, 2]
         cta2: "I-download ang Resume", //[cite: 1, 2]

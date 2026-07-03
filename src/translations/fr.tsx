@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+
+const stats = [
+  "12+ Applications",
+  "12+ Déploiements",
+  "25+ Projets",
+  "40+ API",
+  "3+ Plateformes E-commerce",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Construction de{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    systèmes backend évolutifs
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Développé{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Exploration de
-                </span>{" "}
-                l'IA et du développement de jeux
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Ingénieur logiciel backend spécialisé dans les API évolutives, les applications cloud-native et l'architecture backend moderne utilisant Python, Django et FastAPI. Passionné par l'IA, les systèmes distribués et la création de logiciels conçus pour passer à l'échelle.", //[cite: 1, 2]
         cta1: "Découvrir mes travaux", //[cite: 1, 2]
         cta2: "Télécharger le CV", //[cite: 1, 2]

@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "แอปพลิเคชัน 12+",
+  "ดีพลอย 12+",
+  "โปรเจกต์ 25+",
+  "API 40+",
+  "แพลตฟอร์ม E-Commerce 3+",
+  "CMS 5+",
+];
+
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                สร้าง{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    ระบบแบ็คเอนด์ที่รองรับการขยายตัว
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    พัฒนา{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    สำรวจ
-                </span>{" "}
-                AI และการพัฒนาเกม
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "วิศวกรซอฟต์แวร์แบ็คเอนด์ที่เชี่ยวชาญด้าน API ที่รองรับการขยายตัว, แอปพลิเคชันแบบ Cloud-native, และสถาปัตยกรรมแบ็คเอนด์สมัยใหม่โดยใช้ Python, Django และ FastAPI หลงใหลใน AI, ระบบแบบกระจายศูนย์ (Distributed Systems) และการสร้างซอฟต์แวร์ที่สามารถขยายขนาดได้", //[cite: 1, 2]
         cta1: "ดูผลงานของฉัน", //[cite: 1, 2]
         cta2: "ดาวน์โหลดเรซูเม่", //[cite: 1, 2]

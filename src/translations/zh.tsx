@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ 个应用",
+  "12+ 次部署",
+  "25+ 个项目",
+  "40+ 个 API",
+  "3+ 个电商平台",
+  "5+ 个 CMS",
+];
+
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                构建{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    可扩展的后端系统
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    开发了{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    探索
-                </span>{" "}
-                人工智能与游戏开发
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "后端软件工程师，专注于使用 Python、Django 和 FastAPI 构建可扩展的 API、云原生应用程序和现代后端架构。对人工智能、分布式系统和构建高并发的软件充满热情。", //[cite: 1, 2]
         cta1: "查看我的作品", //[cite: 1, 2]
         cta2: "下载简历", //[cite: 1, 2]

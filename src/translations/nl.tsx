@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Applicaties",
+  "12+ Deployments",
+  "25+ Projecten",
+  "40+ API's",
+  "3+ E-commerceplatforms",
+  "5+ CMS-systemen",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Bouwen van{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    schaalbare backend systemen
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Ontwikkeld{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Verkennen van
-                </span>{" "}
-                AI & game development
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend Software Engineer gespecialiseerd in schaalbare API's, cloud-native applicaties en moderne backend architectuur met Python, Django en FastAPI. Gepassioneerd door AI, gedistribueerde systemen en het bouwen van software die met de groei meegaat.", //[cite: 1, 2]
         cta1: "Ontdek mijn werk", //[cite: 1, 2]
         cta2: "Download CV", //[cite: 1, 2]

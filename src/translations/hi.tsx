@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ एप्लिकेशन",
+  "12+ डिप्लॉयमेंट",
+  "25+ प्रोजेक्ट",
+  "40+ API",
+  "3+ ई-कॉमर्स प्लेटफ़ॉर्म",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -39,18 +49,12 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                    <span className="text-[var(--accent-cyan)]">
-                        स्केलेबल
-                    </span>{" "}
-                    बैकएंड सिस्टम विकसित करना
+                <span className="xl:whitespace-nowrap">
+                    विकसित किए{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                    <span className="text-[var(--accent-cyan)]">
-                        एआई और गेम डेवलपमेंट
-                    </span>{" "}
-                    की खोज
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
         ),

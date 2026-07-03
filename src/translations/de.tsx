@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
+import { RotatingStat } from "../components/RotatingStats";
+
+
+const stats = [
+  "12+ Anwendungen",
+  "12+ Deployments",
+  "25+ Projekte",
+  "40+ APIs",
+  "3+ E-Commerce-Plattformen",
+  "5+ CMS-Systeme",
+];
 
 export default {
     background: {
@@ -32,18 +43,12 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                    Entwicklung{" "}
-                    <span className="text-[var(--accent-cyan)]">
-                        skalierbarer Backend-Systeme
-                    </span>
+                <span className="xl:whitespace-nowrap">
+                    Entwickelt{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                    <span className="text-[var(--accent-cyan)]">
-                        Erforschung von
-                    </span>{" "}
-                    KI & Spieleentwicklung
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
         ),

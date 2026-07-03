@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+    "১২+ অ্যাপ্লিকেশন",
+    "১২+ ডিপ্লয়মেন্ট",
+    "২৫+ প্রজেক্ট",
+    "৪০+ এপিআই",
+    "৩+ ই-কমার্স",
+    "৫+ সিএমএস"
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                তৈরি করছি{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    স্কেলেবল ব্যাকএন্ড সিস্টেম
-                </span>
+                <span className="xl:whitespace-nowrap">
+                শিপ করেছি{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    অন্বেষণ করছি
-                </span>{" "}
-                এআই এবং গেম ডেভেলপমেন্ট
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />{" "}
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "পাইথন, জ্যাঙ্গো এবং ফাস্টএপিআই ব্যবহার করে স্কেলেবল এপিআই, ক্লাউড-নেটিভ অ্যাপ্লিকেশন এবং আধুনিক ব্যাকএন্ড আর্কিটেকচারে বিশেষজ্ঞ একজন ব্যাকএন্ড সফটওয়্যার ইঞ্জিনিয়ার। এআই, ডিস্ট্রিবিউটেড সিস্টেম এবং স্কেল করা যায় এমন সফটওয়্যার তৈরিতে আগ্রহী।", //[cite: 1, 2]
         cta1: "আমার কাজগুলো দেখুন", //[cite: 1, 2]
         cta2: "জীবনবৃত্তান্ত ডাউনলোড করুন", //[cite: 1, 2]

@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Applikationer",
+  "12+ Implementeringer",
+  "25+ Projekter",
+  "40+ API'er",
+  "3+ E-handelsplatforme",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Bygger{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    skalerbare backend-systemer
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Udviklet{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Udforsker
-                </span>{" "}
-                AI & spiludvikling
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend-softwareudvikler med speciale i skalerbare API'er, cloud-native applikationer og moderne backend-arkitektur ved hjælp af Python, Django og FastAPI. Passioneret omkring AI, distribuerede systemer og at bygge software, der kan skaleres.", //[cite: 1, 2]
         cta1: "Udforsk mit arbejde", //[cite: 1, 2]
         cta2: "Download CV", //[cite: 1, 2]

@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12개 이상의 애플리케이션",
+  "12회 이상의 배포",
+  "25개 이상의 프로젝트",
+  "40개 이상의 API",
+  "3개 이상의 전자상거래 플랫폼",
+  "5개 이상의 CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    확장 가능한 백엔드 시스템
-                </span>
-                {" "}구축
+                <span className="xl:whitespace-nowrap">
+                    개발한{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                AI 및 게임 개발{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    도전
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Python, Django, FastAPI를 사용하여 확장 가능한 API, 클라우드 네이티브 애플리케이션 및 최신 백엔드 아키텍처를 전문으로 하는 백엔드 소프트웨어 엔지니어입니다. AI, 분산 시스템, 그리고 대규모로 확장 가능한 소프트웨어를 구축하는 데 열정을 가지고 있습니다.", //[cite: 1, 2]
         cta1: "내 작업 보기", //[cite: 1, 2]
         cta2: "이력서 다운로드", //[cite: 1, 2]

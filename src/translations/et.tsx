@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Rakendust",
+  "12+ Juurutust",
+  "25+ Projekti",
+  "40+ API",
+  "3+ E-kaubanduse platvormi",
+  "5+ CMS-i",
+];
+
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Ehitades{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    skaleeritavaid backend süsteeme
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Arendatud{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Uurimas
-                </span>{" "}
-                AI-d ja mängude arendust
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend tarkvarainžener, kes on spetsialiseerunud skaleeritavatele API-dele, pilvepõhistele (cloud-native) rakendustele ja kaasaegsele backend arhitektuurile, kasutades Pythonit, Djangot ja FastAPId. Kirglik AI, hajutatud süsteemide ja skaleeritava tarkvara ehitamise vastu.", //[cite: 1, 2]
         cta1: "Tutvu minu töödega", //[cite: 1, 2]
         cta2: "Laadi alla CV", //[cite: 1, 2]

@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Aplicações",
+  "12+ Implantações",
+  "25+ Projetos",
+  "40+ APIs",
+  "3+ Plataformas de E-commerce",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Construindo{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    sistemas backend escaláveis
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Desenvolvido{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Explorando
-                </span>{" "}
-                IA e desenvolvimento de jogos
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Engenheiro de software backend especializado em APIs escaláveis, aplicações cloud-native e arquitetura backend moderna usando Python, Django e FastAPI. Apaixonado por IA, sistemas distribuídos e pela construção de software que cresce conforme a necessidade.", //[cite: 1, 2]
         cta1: "Explorar meus trabalhos", //[cite: 1, 2]
         cta2: "Baixar currículo", //[cite: 1, 2]

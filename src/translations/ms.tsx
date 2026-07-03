@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Aplikasi",
+  "12+ Deployment",
+  "25+ Projek",
+  "40+ API",
+  "3+ Platform E-Dagang",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Membina{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    sistem backend yang boleh diskala
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Dibangunkan{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Meneroka
-                </span>{" "}
-                AI & pembangunan permainan
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Jurutera Perisian Backend yang pakar dalam API yang boleh diskala, aplikasi natif awan, dan seni bina backend moden menggunakan Python, Django, dan FastAPI. Bersemangat tentang AI, sistem teragih, dan membina perisian yang boleh diskala.", //[cite: 1, 2]
         cta1: "Teroka Hasil Kerja Saya", //[cite: 1, 2]
         cta2: "Muat Turun Resume", //[cite: 1, 2]

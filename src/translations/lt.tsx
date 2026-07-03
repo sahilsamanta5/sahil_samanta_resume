@@ -1,5 +1,16 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Programėlių",
+  "12+ Diegimų",
+  "25+ Projektų",
+  "40+ API",
+  "3+ E. prekybos platformų",
+  "5+ TVS",
+];
+
 
 export default {
     background: {
@@ -28,21 +39,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Kuriu{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    keičiamo dydžio backend sistemas
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Sukurta{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Tyrinėju
-                </span>{" "}
-                AI ir žaidimų kūrimą
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend programinės įrangos inžinierius, kurio specializacija – keičiamo dydžio API, debesijos (cloud-native) programos ir moderni backend architektūra naudojant Python, Django ir FastAPI. Aistringai domiuosi AI, paskirstytomis sistemomis ir lengvai plečiamos programinės įrangos kūrimu.", //[cite: 1, 2]
         cta1: "Naršyti mano darbus", //[cite: 1, 2]
         cta2: "Atsisiųsti CV", //[cite: 1, 2]

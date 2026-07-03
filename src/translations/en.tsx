@@ -1,6 +1,16 @@
+"use client"
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
+import { RotatingStat } from "../components/RotatingStats";
 
+const stats = [
+  "12+ Applications",
+  "12+ Deployments",
+  "25+ Projects",
+  "40+ APIs",
+  "3+ E-Commerce",
+  "5+ CMS",
+];
 export default {
     background: {
         hero: "/images/bg/en/hero_bg_1.jpg",
@@ -28,24 +38,18 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Building{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    scalable backend systems
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Developed{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Exploring
-                </span>{" "}
-                AI & game development
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />{" "}
                 </span>
             </>
         ),
         para: "Backend Software Engineer specializing in scalable APIs, cloud-native applications, and modern backend architecture using Python, Django, and FastAPI. Passionate about AI, distributed systems, and building software that scales.",
         cta1: "Explore My Works",
-        cta2: "Download Resume",
+        cta2: "Download CV",
         status: {
             head: "Recruitment Status",
             stat: () => (

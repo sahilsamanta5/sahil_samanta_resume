@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12以上のアプリ",
+  "12以上のデプロイ",
+  "25以上のプロジェクト",
+  "40以上のAPI",
+  "3以上のECサイト",
+  "5以上のCMS",
+];
 
 export default {
     background: {
@@ -27,18 +37,12 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block">
-                <span className="text-[var(--accent-cyan)]">
-                    開発する
-                </span>{" "}
-                スケーラブルなバックエンドシステム
+                <span className="xl:whitespace-nowrap">
+                開発した{" "}
                 </span>
 
-                <span className="mt-2 block">
-                <span className="text-[var(--accent-cyan)]">
-                    挑戦する
-                </span>{" "}
-                AI・ゲーム開発
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />{" "}
                 </span>
             </>
         ),

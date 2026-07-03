@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Sovellusta",
+  "12+ Käyttöönottoa",
+  "25+ Projektia",
+  "40+ API:a",
+  "3+ Verkkokauppa-alustaa",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Rakentaa{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    skaalautuvia backend-järjestelmiä
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Kehitetty{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Tutkii
-                </span>{" "}
-                tekoälyä ja pelinkehitystä
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend-ohjelmistoinsinööri, joka on erikoistunut skaalautuviin API-liittymiin, pilvinatiiveihin sovelluksiin ja moderniin backend-arkkitehtuuriin käyttäen Pythonia, Djangoa ja FastAPIdtä. Intohimona tekoäly, hajautetut järjestelmät ja skaalautuvan ohjelmiston rakentaminen.", //[cite: 1, 2]
         cta1: "Tutustu töihini", //[cite: 1, 2]
         cta2: "Lataa ansioluettelo", //[cite: 1, 2]

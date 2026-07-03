@@ -1,5 +1,15 @@
 import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb"; //[cite: 1]
 import { ShowcaseItem } from "../components/showcase/showcaseData"; //[cite: 1]
+import { RotatingStat } from "../components/RotatingStats";
+
+const stats = [
+  "12+ Applikationer",
+  "12+ Driftsättningar",
+  "25+ Projekt",
+  "40+ API:er",
+  "3+ E-handelsplattformar",
+  "5+ CMS",
+];
 
 export default {
     background: {
@@ -28,21 +38,15 @@ export default {
     hero: {
         title: () => (
             <>
-                <span className="block xl:whitespace-nowrap">
-                Bygger{" "}
-                <span className="text-[var(--accent-cyan)]">
-                    skalbara backend-system
-                </span>
+                <span className="xl:whitespace-nowrap">
+                    Utvecklat{" "}
                 </span>
 
-                <span className="mt-2 block xl:whitespace-nowrap">
-                <span className="text-[var(--accent-cyan)]">
-                    Utforskar
-                </span>{" "}
-                AI & spelutveckling
+                <span className="xl:whitespace-nowrap">
+                    <RotatingStat stats={stats} />
                 </span>
             </>
-        ), //[cite: 1, 2]
+        ),
         para: "Backend-mjukvaruingenjör med specialisering på skalbara API:er, molnbaserade applikationer och modern backend-arkitektur med Python, Django och FastAPI. Passionerad för AI, distribuerade system och att bygga mjukvara som skalar.", //[cite: 1, 2]
         cta1: "Utforska mina arbeten", //[cite: 1, 2]
         cta2: "Ladda ner CV", //[cite: 1, 2]

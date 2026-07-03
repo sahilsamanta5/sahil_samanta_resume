@@ -3,6 +3,7 @@
 import {
   TbLanguage,
   TbChevronUp,
+  TbChevronDown,
 } from "react-icons/tb";
 
 import { useMemo, useState } from "react";
@@ -35,14 +36,14 @@ export default function LanguageSwitcher() {
   }, [languages, search]);
 
   return (
-    <div className="fixed bottom-8 right-8 z-[999]">
+    <div className="fixed top-4 right-4 z-[999]">
       <div className="relative">
 
         {open && (
           <div
               className="
                 absolute
-                bottom-full
+                top-full
                 right-0
                 mb-3
                 w-64
@@ -140,7 +141,7 @@ export default function LanguageSwitcher() {
             {language.nativeName}
           </span>
 
-          <TbChevronUp
+          <TbChevronDown
             className={`
               transition-transform
 
