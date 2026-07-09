@@ -118,7 +118,7 @@ export default {
                 </>
             )
         },
-        model: "/images/model/sahil_jp.png",
+        model: "/images/model/sahil_jp_2.png",
         availability: "世界中で勤務可能 • 海外転居可能",
         tech_stack: {
             title: "技術スタック",

@@ -105,7 +105,7 @@ export default {
         para: "Full-Stack Software Engineer specialized in using Python, Django, Django Rest Framework and MySQL & NoSQL Databases. I am passionate about topics covering Artificial Intelligence, Computer Vision, Robotics, Game Development, 3D Asset Designing and Software Scalability. I am someone who is familiar with Agile Methodology, Waterfall Methodology, Monolith Architecture and Monolith Modular Architecture.",
         cta1: "View Projects",
         cta2: "Download Resume",
-        model: "/images/model/sahil_en.png",
+        model: "/images/model/sahil_en_2.png",
         availability: "Available Worldwide • Open To Relocation",
         tech_stack: {
             title: "Technology Stack",

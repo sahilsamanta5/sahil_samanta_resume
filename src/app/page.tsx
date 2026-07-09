@@ -9,6 +9,7 @@ import ShowcaseSection from "../components/projects";
 import ContactSection from "../components/ContactSection";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 import MobileHeader from "../components/layout/MobileHeader";
+import MobileSocial from "../components/layout/MobileSocial";
 
 export default function Home() {
 
@@ -18,6 +19,7 @@ export default function Home() {
 
             <Sidebar />
             <MobileHeader />
+            <MobileSocial />
 
             <main className="flex-1">
 
