@@ -51,12 +51,12 @@ export default function HeroCharacter() {
         {/* Bottom Information */}
         <div className="relative z-10 border-t border-[var(--border-subtle)] bg-[var(--bg-surface)]/80 backdrop-blur-sm p-6">
 
-          <p className="text-sm text-[var(--text-faint)]">
-            Building software with
+          <p className="text-sm text-[var(--accent-soft)]">
+            Building Scalable Applications
           </p>
 
           <h4 className="mt-2 font-display text-2xl text-[var(--foreground)]">
-            Precision.
+            Since 2022
           </h4>
 
         </div>
