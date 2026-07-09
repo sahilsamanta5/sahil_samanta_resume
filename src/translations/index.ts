@@ -26,50 +26,50 @@ import no from "./no";
 export const translations = {
   en,
   jp,
-  de,
-  hi,
-  bn,
-  fil,
-  th,
-  ko,
-  zh,
-  ms,
-  lt,
-  et,
-  cs,
-  pl,
-  fr,
-  es,
-  pt,
-  it,
-  nl,
-  sv,
-  da,
-  fi,
-  no
+  // de,
+  // hi,
+  // bn,
+  // fil,
+  // th,
+  // ko,
+  // zh,
+  // ms,
+  // lt,
+  // et,
+  // cs,
+  // pl,
+  // fr,
+  // es,
+  // pt,
+  // it,
+  // nl,
+  // sv,
+  // da,
+  // fi,
+  // no
 };
 
 export type Translation =
   typeof translations.en;
   typeof translations.jp;
-  typeof translations.de;
-  typeof translations.hi;
-  typeof translations.bn;
-  typeof translations.fil;
-  typeof translations.th;
-  typeof translations.ko;
-  typeof translations.zh;
-  typeof translations.ms;
-  typeof translations.lt;
-  typeof translations.et;
-  typeof translations.cs;
-  typeof translations.pl;
-  typeof translations.fr;
-  typeof translations.es;
-  typeof translations.pt;
-  typeof translations.it;
-  typeof translations.nl;
-  typeof translations.sv;
-  typeof translations.da;
-  typeof translations.fi;
-  typeof translations.no;
+  // typeof translations.de;
+  // typeof translations.hi;
+  // typeof translations.bn;
+  // typeof translations.fil;
+  // typeof translations.th;
+  // typeof translations.ko;
+  // typeof translations.zh;
+  // typeof translations.ms;
+  // typeof translations.lt;
+  // typeof translations.et;
+  // typeof translations.cs;
+  // typeof translations.pl;
+  // typeof translations.fr;
+  // typeof translations.es;
+  // typeof translations.pt;
+  // typeof translations.it;
+  // typeof translations.nl;
+  // typeof translations.sv;
+  // typeof translations.da;
+  // typeof translations.fi;
+  // typeof translations.no;
