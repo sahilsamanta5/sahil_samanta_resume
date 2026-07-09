@@ -46,7 +46,26 @@ export default function ProfileTabs() {
       <div className="relative z-10 w-full max-w-5xl">
         
         {/* ── TAB NAVIGATION ── */}
-        <div className="mb-12 flex w-full flex-wrap justify-center gap-2 rounded-full border border-[var(--border-accent)] bg-[var(--bg-glass)] p-2 backdrop-blur-[16px] shadow-[var(--shadow-md)]">
+        <div
+          className="
+            mb-12
+            grid
+            grid-cols-2
+            gap-3
+            rounded-[var(--radius-xl)]
+            border
+            border-[var(--border-accent)]
+            bg-[var(--bg-glass)]
+            p-3
+            backdrop-blur-[var(--blur-md)]
+            shadow-[var(--shadow-md)]
+
+            sm:grid-cols-3
+            lg:flex
+            lg:flex-wrap
+            lg:justify-center
+          "
+        >
           {translation.profile.tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -55,12 +74,32 @@ export default function ProfileTabs() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`group relative flex min-w-[130px] flex-1 items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-sans text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 sm:flex-none
-                ${
-                  isActive
-                    ? "text-[var(--foreground)]"
-                    : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
-                }`}
+                className={`
+                  group
+                  relative
+                  flex
+                  min-h-[64px]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2
+                  overflow-hidden
+                  rounded-full
+                  px-5
+                  py-3
+                  transition-all
+                  duration-300
+
+                  lg:min-h-[52px]
+                  lg:w-auto
+                  lg:min-w-[170px]
+
+                  ${
+                    isActive
+                      ? "text-[var(--foreground)]"
+                      : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
+                  }
+                `}
               >
                 {/* Active Background */}
                 {isActive && (
@@ -73,9 +112,8 @@ export default function ProfileTabs() {
                       }}
                     />
 
-                    {/* Green Glow */}
                     <div
-                      className="absolute inset-0 rounded-full blur-md opacity-60"
+                      className="absolute inset-0 rounded-full opacity-60 blur-md"
                       style={{
                         background:
                           "linear-gradient(135deg, var(--accent-secondary), var(--accent-soft))",
@@ -84,20 +122,35 @@ export default function ProfileTabs() {
                   </>
                 )}
 
-                {/* Hover Border */}
+                {/* Hover */}
                 {!isActive && (
-                  <div className="absolute inset-0 rounded-full border border-transparent transition-all duration-300 group-hover:border-[var(--accent-secondary)]/40 group-hover:bg-[var(--bg-hover)]" />
+                  <div className="absolute inset-0 rounded-full border border-transparent transition-all duration-300 group-hover:border-[var(--border-accent)] group-hover:bg-[var(--bg-hover)]" />
                 )}
 
                 <Icon
-                  className={`relative z-10 text-lg transition-all duration-300 ${
+                  className={`relative z-10 shrink-0 text-lg ${
                     isActive
                       ? "text-[var(--foreground)]"
                       : "text-[var(--accent-primary)] group-hover:text-[var(--accent-secondary)]"
                   }`}
                 />
 
-                <span className="relative z-10">{tab.label}</span>
+                <span
+                  className="
+                    relative
+                    z-10
+                    text-center
+                    text-[11px]
+                    font-semibold
+                    leading-tight
+                    tracking-[0.05em]
+
+                    lg:text-xs
+                    lg:tracking-[0.1em]
+                  "
+                >
+                  {tab.label}
+                </span>
               </button>
             );
           })}
@@ -231,97 +284,218 @@ export default function ProfileTabs() {
         )}
 
         {activeTab === "certs" && (
-        <>
-          <div className="grid animate-[fadeIn_0.4s_ease-out] gap-6 md:grid-cols-2">
-            {displayedCertificates.map((cert, idx) => (
-              <div
-                key={idx}
-                className="group overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--bg-glass)] backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)]"
-              >
-                {/* Certificate */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={cert.image}
-                    alt={cert.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
-
-                {/* Content */}
-                <div className="space-y-4 p-6">
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-full border border-[var(--border-accent)] bg-[var(--bg-surface)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--accent-primary)]">
-                      {cert.date}
-                    </span>
-
-                    {cert.url && (
-                      <a
-                        href={cert.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--text-muted)] transition-colors duration-300 hover:text-[var(--accent-primary)]"
-                      >
-                        {translation.profile.cta}
-                        <TbExternalLink size={14} />
-                      </a>
-                    )}
-                  </div>
-
-                  <div>
-                    <h3 className="font-serif text-xl font-semibold text-[var(--foreground)] transition-colors duration-300 group-hover:text-[var(--accent-primary)]">
-                      {cert.title}
-                    </h3>
-
-                    <p className="mt-2 font-sans text-xs uppercase tracking-[0.2em] text-[var(--text-faint)]">
-                      {cert.provider}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {totalCertPages > 1 && (
-            <div className="mt-10 flex items-center justify-center gap-3">
-              <button
-                onClick={() => setCertPage((p) => Math.max(1, p - 1))}
-                disabled={certPage === 1}
-                className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] transition-all duration-300 hover:border-[var(--border-accent)] hover:text-[var(--accent-primary)] disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                {translation.profile.carouselCta.prev}
-              </button>
-
-              {Array.from({ length: totalCertPages }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCertPage(index + 1)}
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition-all duration-300 ${
-                    certPage === index + 1
-                      ? "border-[var(--accent-primary)] bg-[var(--accent-primary)] text-black shadow-[var(--shadow-glow-green)]"
-                      : "border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:border-[var(--border-accent)] hover:text-[var(--accent-primary)]"
-                  }`}
+          <>
+            <div className="grid animate-[fadeIn_0.4s_ease-out] grid-cols-1 gap-6 lg:grid-cols-2">
+              {displayedCertificates.map((cert, idx) => (
+                <div
+                  key={idx}
+                  className="
+                    group
+                    overflow-hidden
+                    rounded-[var(--radius-lg)]
+                    border
+                    border-[var(--border-subtle)]
+                    bg-[var(--bg-glass)]
+                    backdrop-blur-[var(--blur-md)]
+                    transition-all
+                    duration-300
+                    hover:border-[var(--border-accent)]
+                    hover:shadow-[var(--shadow-glow-green)]
+                  "
                 >
-                  {index + 1}
-                </button>
-              ))}
+                  {/* Image */}
 
-              <button
-                onClick={() =>
-                  setCertPage((p) => Math.min(totalCertPages, p + 1))
-                }
-                disabled={certPage === totalCertPages}
-                className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] transition-all duration-300 hover:border-[var(--border-accent)] hover:text-[var(--accent-primary)] disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                {translation.profile.carouselCta.next}
-              </button>
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={cert.image}
+                      alt={cert.title}
+                      fill
+                      className="object-cover transition-all duration-500 group-hover:brightness-110 group-hover:contrast-105"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
+
+                  {/* Content */}
+
+                  <div className="space-y-4 p-5 sm:p-6">
+
+                    {/* Date + Link */}
+
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
+                      <span
+                        className="
+                          w-fit
+                          rounded-full
+                          border
+                          border-[var(--border-accent)]
+                          bg-[var(--bg-surface)]
+                          px-3
+                          py-1
+                          text-[10px]
+                          font-semibold
+                          uppercase
+                          tracking-[0.08em]
+                          text-[var(--accent-primary)]
+                        "
+                      >
+                        {cert.date}
+                      </span>
+
+                      {cert.url && (
+                        <a
+                          href={cert.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="
+                            inline-flex
+                            items-center
+                            gap-2
+                            text-xs
+                            font-medium
+                            text-[var(--text-muted)]
+                            transition-colors
+                            duration-300
+                            hover:text-[var(--accent-primary)]
+                          "
+                        >
+                          {translation.profile.cta}
+
+                          <TbExternalLink size={15} />
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Title */}
+
+                    <div>
+
+                      <h3
+                        className="
+                          font-serif
+                          text-xl
+                          font-semibold
+                          leading-tight
+                          text-[var(--foreground)]
+                          transition-colors
+                          duration-300
+                          group-hover:text-[var(--accent-primary)]
+                        "
+                      >
+                        {cert.title}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-xs
+                          tracking-[0.08em]
+                          text-[var(--text-faint)]
+                        "
+                      >
+                        {cert.provider}
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              ))}
             </div>
-          )}
-        </>
-      )}
+
+            {totalCertPages > 1 && (
+              <div
+                className="
+                  mt-10
+                  flex
+                  flex-wrap
+                  items-center
+                  justify-center
+                  gap-2
+                  sm:gap-3
+                "
+              >
+                <button
+                  onClick={() => setCertPage((p) => Math.max(1, p - 1))}
+                  disabled={certPage === 1}
+                  className="
+                    rounded-full
+                    border
+                    border-[var(--border-subtle)]
+                    bg-[var(--bg-surface)]
+                    px-4
+                    py-2
+                    text-xs
+                    font-semibold
+                    text-[var(--text-muted)]
+                    transition-all
+                    duration-300
+                    hover:border-[var(--border-accent)]
+                    hover:text-[var(--accent-primary)]
+                    disabled:cursor-not-allowed
+                    disabled:opacity-40
+                  "
+                >
+                  {translation.profile.carouselCta.prev}
+                </button>
+
+                {Array.from({ length: totalCertPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCertPage(index + 1)}
+                    className={`
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      text-sm
+                      font-semibold
+                      transition-all
+                      duration-300
+                      ${
+                        certPage === index + 1
+                          ? "border-[var(--accent-primary)] bg-[var(--accent-primary)] text-black shadow-[var(--shadow-glow-green)]"
+                          : "border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:border-[var(--border-accent)] hover:text-[var(--accent-primary)]"
+                      }
+                    `}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+
+                <button
+                  onClick={() =>
+                    setCertPage((p) => Math.min(totalCertPages, p + 1))
+                  }
+                  disabled={certPage === totalCertPages}
+                  className="
+                    rounded-full
+                    border
+                    border-[var(--border-subtle)]
+                    bg-[var(--bg-surface)]
+                    px-4
+                    py-2
+                    text-xs
+                    font-semibold
+                    text-[var(--text-muted)]
+                    transition-all
+                    duration-300
+                    hover:border-[var(--border-accent)]
+                    hover:text-[var(--accent-primary)]
+                    disabled:cursor-not-allowed
+                    disabled:opacity-40
+                  "
+                >
+                  {translation.profile.carouselCta.next}
+                </button>
+              </div>
+            )}
+          </>
+        )}
         </div>
       </div>
     </section>
