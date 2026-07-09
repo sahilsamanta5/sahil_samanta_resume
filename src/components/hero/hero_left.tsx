@@ -27,7 +27,7 @@ export default function HeroLeft() {
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-secondary)]" />
 
             <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--accent-soft)]">
-              Available Worldwide • Open To Relocation
+              {translation.hero.availability}
             </span>
           </span>
         </div>

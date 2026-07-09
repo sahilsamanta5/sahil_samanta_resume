@@ -1,10 +1,13 @@
 "use client";
 
+import { useLanguage } from "@/src/context/LanguageContext";
+
 interface SidebarHeadProps {
     collapsed: boolean;
 }
 
 export default function SidebarHead({ collapsed }: SidebarHeadProps) {
+    const { translation } = useLanguage();
 
     if (collapsed) {
         return (
@@ -80,7 +83,7 @@ export default function SidebarHead({ collapsed }: SidebarHeadProps) {
                     "
                 >
                     <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-secondary)]" />
-                    Open for Work
+                    {translation.header.availability}
                 </span>
             </div>
 
@@ -96,7 +99,7 @@ export default function SidebarHead({ collapsed }: SidebarHeadProps) {
                         text-[var(--foreground)]
                     "
                 >
-                    Sahil Samanta
+                    {translation.header.name}
                 </h2>
             </div>
 
@@ -112,7 +115,7 @@ export default function SidebarHead({ collapsed }: SidebarHeadProps) {
                         text-[var(--accent-primary)]
                     "
                 >
-                    Full-Stack Engineer
+                    {translation.header.position}
                 </p>
             </div>
 

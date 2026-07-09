@@ -1,5 +1,5 @@
 "use client"
-import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
+import { TbActivity, TbBrandDiscord, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 import { RotatingStat } from "../components/RotatingStats";
 
@@ -17,21 +17,82 @@ export default {
     }, 
     header: {
         nav: [
-            { label: "HOME",     href: "#home",     icon: TbHome },
-            { label: "SKILLS",   href: "#profile",   icon: TbTerminal2 },
-            { label: "ABOUT",    href: "#about",    icon: TbUser },
-            { label: "PROJECTS", href: "#showcase", icon: TbLayoutGrid },
-            { label: "CONTACT",  href: "#contact",  icon: TbMail },
+            {
+                title: "Navigations",
+                items: [
+                    {
+                        title: "Home",
+                        href: "#home",
+                        icon: TbHome2,
+                    },
+                    {
+                        title: "Skills",
+                        href: "#skills",
+                        icon: TbCode,
+                    },
+                    {
+                        title: "About",
+                        href: "#about",
+                        icon: TbUser,
+                    },
+                    {
+                        title: "Experience",
+                        href: "#experience",
+                        icon: TbBriefcase2,
+                    },
+                    {
+                        title: "Projects",
+                        href: "#showcase",
+                        icon: TbLayoutGrid,
+                    },
+                    {
+                        title: "Contact",
+                        href: "#contact",
+                        icon: TbMail,
+                    },
+                ]
+            },
+            {
+                title: "Connect",
+                items: [
+                    {
+                        title: "Github",
+                        href: "https://github.com/sahilsamanta5",
+                        icon: TbBrandGithub
+                    },
+                    {
+                        title: "Linkedin",
+                        href: "https://www.linkedin.com/in/sahilsamanta/",
+                        icon: TbBrandLinkedin
+                    },
+                    {
+                        title: "Instagram",
+                        href: "https://www.instagram.com/developersahilsamanta/",
+                        icon: TbBrandInstagram
+                    },
+                    {
+                        title: "Twitter / X",
+                        href: "https://x.com/Sahilsamanta1",
+                        icon: TbBrandX
+                    },
+                    {
+                        title: "Discord",
+                        href: "https://discord.com/users/324505079837229059",
+                        icon: TbBrandDiscord
+                    },
+                ]
+            }
         ],
-        socials: [
-            { label: "LINKEDIN", href: "https://www.linkedin.com/in/sahilsamanta/", icon: TbBrandLinkedin },
-        ],
-        collapseText: "COLLAPSE",
+        collapseText: "Collapse Menu",
         name: "Sahil Samanta",
-        position: "BACKEND SOFTWARE ENGINEER",
-        availability: "AVAILABLE WORLDWIDE",
-        since: "CODING SINCE 2021",
-        experience: "2+ YEARS IN INDUSTRY"
+        position: "Full-Stack Engineer",
+        availability: "Open For Work",
+        tagline: {
+            tag: "Building Scalable Applications",
+            stat: "Since 2022"
+        },
+        joining_status: "Immediate Joiner",
+        available_heading: "Availability"
     },
     
     hero: {
@@ -49,7 +110,8 @@ export default {
         para: "Full-Stack Software Engineer specialized in using Python, Django, Django Rest Framework and MySQL & NoSQL Databases. I am passionate about topics covering Artificial Intelligence, Computer Vision, Robotics, Game Development, 3D Asset Designing and Software Scalability. I am someone who is familiar with Agile Methodology, Waterfall Methodology, Monolith Architecture and Monolith Modular Architecture.",
         cta1: "Explore My Works",
         cta2: "Download CV",
-        model: "/images/model/sahil_en.png"
+        model: "/images/model/sahil_en.png",
+        availability: "Available Worldwide • Open To Relocation"
     },
     profile: {
         tabs: [

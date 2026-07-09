@@ -20,11 +20,11 @@ export default function HeroCharacter() {
         <div className="relative z-10 flex items-center justify-between p-6">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-soft)]">
-              Availability
+              {translation.header.available_heading}
             </p>
 
             <h3 className="mt-1 font-display text-xl text-[var(--foreground)]">
-              open For Work
+              { translation.header.availability }
             </h3>
           </div>
 
@@ -32,7 +32,7 @@ export default function HeroCharacter() {
             <span className="h-2 w-2 rounded-full bg-[var(--accent-primary)] animate-pulse" />
 
             <span className="text-xs font-medium text-[var(--accent-primary)]">
-              Immediate Joiner
+              {translation.header.joining_status}
             </span>
           </span>
         </div>
@@ -52,11 +52,11 @@ export default function HeroCharacter() {
         <div className="relative z-10 border-t border-[var(--border-subtle)] bg-[var(--bg-surface)]/80 backdrop-blur-sm p-6">
 
           <p className="text-sm text-[var(--accent-soft)]">
-            Building Scalable Applications
+            {translation.header.tagline.tag}
           </p>
 
           <h4 className="mt-2 font-display text-2xl text-[var(--foreground)]">
-            Since 2022
+            {translation.header.tagline.stat}
           </h4>
 
         </div>

@@ -5,71 +5,13 @@ import { TbBrandDiscord, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBra
 import SidebarHead from "./Sidebar/SidebarHead";
 import SidebarNavigations from "./Sidebar/SidebarNavigations";
 import { title } from "process";
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function Sidebar() {
 
     const [collapsed, setCollapsed] = useState(true);
 
-    const navigationItems = [
-      {
-          title: "Home",
-          href: "#home",
-          icon: TbHome2,
-      },
-      {
-          title: "Skills",
-          href: "#skills",
-          icon: TbCode,
-      },
-      {
-          title: "About",
-          href: "#about",
-          icon: TbUser,
-      },
-      {
-          title: "Experience",
-          href: "#experience",
-          icon: TbBriefcase2,
-      },
-      {
-          title: "Projects",
-          href: "#showcase",
-          icon: TbLayoutGrid,
-      },
-      {
-          title: "Contact",
-          href: "#contact",
-          icon: TbMail,
-      },
-  ];
-
-  const socialItems = [
-    {
-      title: "Github",
-      href: "https://github.com/sahilsamanta5",
-      icon: TbBrandGithub
-    },
-    {
-      title: "Linkedin",
-      href: "https://www.linkedin.com/in/sahilsamanta/",
-      icon: TbBrandLinkedin
-    },
-    {
-      title: "Instagram",
-      href: "https://www.instagram.com/developersahilsamanta/",
-      icon: TbBrandInstagram
-    },
-    {
-      title: "Twitter / X",
-      href: "https://x.com/Sahilsamanta1",
-      icon: TbBrandX
-    },
-    {
-      title: "Discord",
-      href: "https://discord.com/users/324505079837229059",
-      icon: TbBrandDiscord
-    },
-  ];
+    const { translation } = useLanguage();
 
 
     return (
@@ -157,19 +99,16 @@ export default function Sidebar() {
                 <SidebarHead collapsed={collapsed} />
 
                 <div className="flex-1 overflow-y-auto no-scrollbar">
-
-                    <SidebarNavigations
-                        title="Navigations"
-                        collapsed={collapsed}
-                        navigationItems={navigationItems}
-                    />
-
-                    <SidebarNavigations
-                        title="Connect"
-                        collapsed={collapsed}
-                        navigationItems={socialItems}
-                    />
-
+                    {translation.header.nav.map((nav, idx) => {
+                        return (
+                            <SidebarNavigations
+                                key={"nav_"+idx}
+                                title={nav.title}
+                                collapsed={collapsed}
+                                navigationItems={nav.items}
+                            />
+                        )
+                    })}
                 </div>
 
                 <div className="border-t border-white/5 p-5">
@@ -234,7 +173,7 @@ export default function Sidebar() {
                                   duration-300
                               "
                           >
-                              Collapse Menu
+                              {translation.header.collapseText}
                           </span>
 
                       )}

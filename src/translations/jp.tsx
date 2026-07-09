@@ -1,4 +1,4 @@
-import { TbActivity, TbBrandLinkedin, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTerminal2, TbTools, TbUser, TbWorld } from "react-icons/tb";
+import { TbActivity, TbBrandDiscord, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 import { RotatingStat } from "../components/RotatingStats";
 
@@ -17,23 +17,79 @@ export default {
         contact: "/images/bg/jp/contact_bg.png"
     }, 
     header: {
-        nav: [
-            { label: "ホーム",     href: "#home",     icon: TbHome },
-            { label: "スキル",   href: "#profile",   icon: TbTerminal2 },
-            { label: "私について",    href: "#about",    icon: TbUser },
-            { label: "プロジェクト", href: "#showcase", icon: TbLayoutGrid },
-            { label: "お問い合わせ",  href: "#contact",  icon: TbMail },
-        ],
-        socials: [
-            { label: "リンクトイン", href: "https://www.linkedin.com/in/sahilsamanta/", icon: TbBrandLinkedin },
-        ],
-        collapseText: "折りたたむ",
-        name: "サマンタ・サヒル",
-        position: "バックエンドソフトウェアエンジニア",
-        availability: "世界中の求人に対応",
-        since: "2021年からプログラミング",
-        experience: "業界経験2年以上",
-    },
+            nav: [
+                {
+                    title: "ナビゲーション",
+                    items: [
+                        {
+                            title: "ホーム",
+                            href: "#home",
+                            icon: TbHome2,
+                        },
+                        {
+                            title: "スキル",
+                            href: "#skills",
+                            icon: TbCode,
+                        },
+                        {
+                            title: "自己紹介",
+                            href: "#about",
+                            icon: TbUser,
+                        },
+                        {
+                            title: "制作実績",
+                            href: "#showcase",
+                            icon: TbLayoutGrid,
+                        },
+                        {
+                            title: "お問い合わせ",
+                            href: "#contact",
+                            icon: TbMail,
+                        },
+                    ]
+                },
+                {
+                    title: "つながる",
+                    items: [
+                        {
+                            title: "ギットハブ",
+                            href: "https://github.com/sahilsamanta5",
+                            icon: TbBrandGithub
+                        },
+                        {
+                            title: "リンクトイン",
+                            href: "https://www.linkedin.com/in/sahilsamanta/",
+                            icon: TbBrandLinkedin
+                        },
+                        {
+                            title: "インスタグラム",
+                            href: "https://www.instagram.com/developersahilsamanta/",
+                            icon: TbBrandInstagram
+                        },
+                        {
+                            title: "ツイッター / エックス",
+                            href: "https://x.com/Sahilsamanta1",
+                            icon: TbBrandX
+                        },
+                        {
+                            title: "ディスコード",
+                            href: "https://discord.com/users/324505079837229059",
+                            icon: TbBrandDiscord
+                        },
+                    ]
+                }
+            ],
+            collapseText: "メニューを閉じる",
+            name: "サマンタ サヒル",
+            position: "フルスタック エンジニア",
+            availability: "転職活動中",
+            tagline: {
+                tag: "スケーラブルなアプリケーションを構築",
+                stat: "2022年から"
+            },
+            joining_status: "すぐに入社可能",
+            available_heading: "稼働状況"
+        },
     hero: {
         title: () => (
             <>
@@ -63,11 +119,12 @@ export default {
                 </>
             )
         },
-        model: "/images/model/sahil_jp.png"
+        model: "/images/model/sahil_jp.png",
+        availability: "世界中で勤務可能 • 海外転居可能"
     },
     profile: {
         tabs: [
-            { id: "skills", label: "技術スキル", icon: TbCode },
+            { id: "skills", label: "技術", icon: TbCode },
             { id: "education", label: "学歴", icon: TbSchool },
             { id: "certs", label: "資格・認定", icon: TbCertificate },
             { id: "hobbies", label: "趣味", icon: TbActivity },
