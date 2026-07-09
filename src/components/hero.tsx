@@ -4,6 +4,7 @@ import HeroLeft from "./hero/hero_left";
 import HeroCharacter from "./hero/hero_character";
 import HeroStats from "./hero/hero_stats";
 import HeroTechStack from "./hero/hero_tech";
+import HeroStatsContainer from "./hero/hero_stats_container";
 
 export default function Hero() {
     return (
@@ -75,7 +76,7 @@ export default function Hero() {
                     <HeroTechStack />
 
                     {/* Stats */}
-                    <HeroStats />
+                    <HeroStatsContainer />
 
                 </div>
 

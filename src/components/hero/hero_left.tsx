@@ -2,6 +2,7 @@
 
 import { TbArrowRight, TbDownload } from "react-icons/tb";
 import { useLanguage } from "@/src/context/LanguageContext";
+import { scrollToInternalSection } from "../utils";
 
 const techStack = [
   "Python",
@@ -37,22 +38,22 @@ export default function HeroLeft() {
         </h1>
 
         {/* Position */}
-        <p className="mt-4 text-lg font-semibold text-[var(--accent-secondary)] sm:text-xl">
+        <p className="mt-1 text-lg font-semibold text-[var(--accent-primary)] sm:text-xl">
           {translation.header.position}
         </p>
 
         {/* Hero Title */}
-        <h2 className="mt-10 max-w-3xl font-display text-3xl font-semibold leading-tight text-[var(--foreground)] md:text-5xl">
+        <h2 className="mt-5 max-w-3xl font-display text-3xl font-semibold leading-tight text-[var(--foreground)] md:text-5xl">
           {translation.hero.title()}
         </h2>
 
         {/* Description */}
-        <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-muted)]">
+        <p className="mt-2 max-w-2xl text-base leading-8 text-[var(--text-muted)]">
           {translation.hero.para}
         </p>
 
         {/* Divider */}
-        <div className="my-10 h-px w-full bg-[var(--border-subtle)]" />
+        <div className="my-5 h-px w-full bg-[var(--border-subtle)]" />
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-3">
@@ -71,7 +72,11 @@ export default function HeroLeft() {
 
           <a
             href="#showcase"
-            className="group inline-flex items-center gap-3 rounded-xl bg-[var(--accent-primary)] px-7 py-4 font-semibold text-[var(--foreground)] transition-all duration-300 hover:bg-[var(--accent-secondary)]"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToInternalSection("#showcase");
+            }}
+            className="group inline-flex items-center gap-3 rounded-xl bg-[var(--accent-primary)] px-7 py-4 font-bold text-[var(--background)] transition-all duration-300 hover:bg-[var(--accent-secondary)] hover:text-[var(--foreground)]"
           >
             <span>View Projects</span>
 

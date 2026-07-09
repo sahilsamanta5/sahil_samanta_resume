@@ -19,20 +19,20 @@ export default function HeroCharacter() {
         {/* Status */}
         <div className="relative z-10 flex items-center justify-between p-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">
-              Currently
+            <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-soft)]">
+              Availability
             </p>
 
             <h3 className="mt-1 font-display text-xl text-[var(--foreground)]">
-              Available
+              open For Work
             </h3>
           </div>
 
           <span className="flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-2">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent-secondary)] animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-[var(--accent-primary)] animate-pulse" />
 
-            <span className="text-xs font-medium text-[var(--accent-soft)]">
-              Open
+            <span className="text-xs font-medium text-[var(--accent-primary)]">
+              Immediate Joiner
             </span>
           </span>
         </div>

@@ -45,12 +45,12 @@ export default function HeroTechStack() {
 
           <div>
 
-            <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">
+            <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-soft)]">
               Technology Stack
             </p>
 
             <h3 className="mt-2 font-display text-3xl text-[var(--foreground)]">
-              Building With
+              Top Tech Stacks Used
             </h3>
 
           </div>

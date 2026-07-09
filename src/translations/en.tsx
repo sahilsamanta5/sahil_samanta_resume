@@ -46,17 +46,9 @@ export default {
                 </span>
             </>
         ),
-        para: "Backend Software Engineer specializing in scalable APIs, cloud-native applications, and modern backend architecture using Python, Django, and FastAPI. Passionate about AI, distributed systems, and building software that scales.",
+        para: "Full-Stack Software Engineer specialized in using Python, Django, Django Rest Framework and MySQL & NoSQL Databases. I am passionate about topics covering Artificial Intelligence, Computer Vision, Robotics, Game Development, 3D Asset Designing and Software Scalability. I am someone who is familiar with Agile Methodology, Waterfall Methodology, Monolith Architecture and Monolith Modular Architecture.",
         cta1: "Explore My Works",
         cta2: "Download CV",
-        status: {
-            head: "Recruitment Status",
-            stat: () => (
-                <>
-                    Based in <span className="text-[var(--accent-blue)]">Kolkata, India</span>. Open to full-time, remote, hybrid, and relocation opportunities.
-                </>
-            )
-        },
         model: "/images/model/sahil_en.png"
     },
     profile: {

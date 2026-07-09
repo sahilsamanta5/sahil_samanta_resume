@@ -33,7 +33,7 @@ export default function Sidebar() {
       },
       {
           title: "Projects",
-          href: "#projects",
+          href: "#showcase",
           icon: TbLayoutGrid,
       },
       {
