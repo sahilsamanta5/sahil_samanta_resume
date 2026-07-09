@@ -8,6 +8,7 @@ import ProfileTabs from "../components/profile";
 import ShowcaseSection from "../components/projects";
 import ContactSection from "../components/ContactSection";
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import MobileHeader from "../components/layout/MobileHeader";
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
         <div className="flex min-h-screen bg-[var(--background)] text-[var(--foreground)]">
 
             <Sidebar />
+            <MobileHeader />
 
             <main className="flex-1">
 
