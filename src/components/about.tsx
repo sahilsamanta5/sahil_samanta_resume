@@ -6,58 +6,111 @@ import { useLanguage } from "../context/LanguageContext";
 export default function About() {
   const { translation } = useLanguage();
   return (
-    <section 
-      id="about" 
-      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-[var(--background)] px-6 py-24 md:px-16 lg:px-24"
+    <section
+      id="about"
+      className="relative overflow-hidden bg-[var(--accent-primary)]/10 py-28"
     >
-      
-      {/* ── Background Layer ── */}
-      <div className="absolute inset-0 z-0 bg-[url('/images/bg/about_bg.png')] bg-cover bg-center opacity-10 blend-soft-light pointer-events-none" />
-      
-     
-      <div className="relative z-10 w-full max-w-7xl">
-        
-        {/* Section Header */}
-        <div className="mb-16 flex flex-col items-start gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-[1px] w-8 bg-[var(--accent-cyan)]" />
-            <span className="font-sans text-[11px] font-medium tracking-[0.16em] text-[var(--accent-cyan)] uppercase">
-              {translation.about.tagline}
-            </span>
-          </div>
-          <h2 className="font-serif text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl leading-[1.1]">
-            {translation.about.heading}
-          </h2>
-        </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        {/* ── Main Content Grid ── */}
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-12 xl:gap-24">
-          
-          {/* ── LEFT COLUMN: The Narrative (Wider) ── */}
-          <div className="flex flex-col space-y-7 lg:col-span-7">
-            {
-              translation.about.narration()
-            }
+        {/* Bento Grid */}
+        <div className="grid auto-rows-[220px] gap-6 lg:grid-cols-12">
+
+          {/* ABOUT */}
+          <div className="group relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)] lg:col-span-8 lg:row-span-2">
+
+            <div
+              className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              style={{
+                background:
+                  "radial-gradient(circle at top right, rgba(191,0,255,.08), transparent 40%), radial-gradient(circle at bottom left, rgba(44,255,5,.08), transparent 50%)",
+              }}
+            />
+
+            <div className="relative z-10">
+              <span className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--accent-primary)]">
+                Behind the Code
+              </span>
+
+              <h3 className="mt-4 font-serif text-3xl font-semibold text-[var(--foreground)]">
+                About Me
+              </h3>
+              <div className="mt-2 max-w-3xl space-y-6 text-[15px] leading-8 text-[var(--text-muted)]">
+                {translation.about.narration()}
+              </div>
+            </div>
           </div>
 
-          {/* ── RIGHT COLUMN: Quick Facts ONLY ── */}
-          <div className="flex flex-col gap-4 lg:col-span-5 pt-2">
-            
-            {/* Fact Cards */}
-            {translation.about.factCards.map(factCard => {
-              return (
-                <div key={factCard.id} className="group flex items-start gap-5 rounded-[2px] border border-[var(--border-subtle)] bg-[var(--bg-surface)]/30 p-6 transition-all hover:border-[var(--accent-cyan)]/50 hover:bg-[var(--bg-hover)]">
-                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-[2px] bg-[var(--accent-glow)]">
-                    <factCard.icon className="text-xl text-[var(--accent-cyan)]" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-sans text-[10px] font-bold tracking-[0.15em] text-[var(--text-faint)] uppercase">{factCard.type}</span>
-                    <span className="font-sans text-[14px] font-medium text-[var(--foreground)]">{factCard.heading}</span>
-                    <span className="font-sans text-[13px] text-[var(--text-muted)]">{factCard.para}</span>
-                  </div>
-                </div>
-              )
-            })}
+          {/* EDUCATION */}
+          <div className="group relative overflow-hidden rounded-[15px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)] lg:col-span-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-soft)]">
+              { translation.about.factCards[0].type }
+            </p>
+
+            <h3 className="mt-3 font-serif text-2xl text-[var(--foreground)]">
+              { translation.about.factCards[0].heading }
+            </h3>
+
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
+              { translation.about.factCards[0].para }
+            </p>
+          </div>
+
+          {/* LOCATION */}
+          <div className="group relative overflow-hidden rounded-[15px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)] lg:col-span-4">
+
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-soft)]">
+              { translation.about.factCards[1].type }
+            </p>
+
+            <h3 className="mt-3 font-serif text-2xl text-[var(--foreground)]">
+              { translation.about.factCards[1].heading }
+            </h3>
+
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
+              { translation.about.factCards[1].para }
+            </p>
+          </div>
+
+          {/* CURRENT FOCUS */}
+          <div className="group relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)] lg:col-span-6">
+
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-soft)]">
+              { translation.about.factCards[2].type }
+            </p>
+
+            <h3 className="mt-3 font-serif text-3xl text-[var(--foreground)]">
+              { translation.about.factCards[2].heading }
+            </h3>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {translation.about.factCards[2].items?.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-[var(--border-accent)] bg-[var(--bg-surface)] px-3 py-1 text-xs text-[var(--accent-primary)]"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* PASSIONS */}
+          <div className="group relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 backdrop-blur-[var(--blur-md)] transition-all duration-300 hover:border-[var(--border-accent)] hover:shadow-[var(--shadow-glow-green)] lg:col-span-6">
+
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-soft)]">
+              { translation.about.factCards[3].type }
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {translation.about.factCards[3].items?.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[var(--border-accent)] bg-[var(--bg-surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-all duration-300 hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] hover:shadow-[var(--shadow-glow-green)]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
         </div>

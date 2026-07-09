@@ -1,9 +1,7 @@
 import {
-  TbFileText,
   TbMusic,
   TbPhoto,
   TbPlayerPlay,
-  TbBrandGithub,
   TbExternalLink,
 } from "react-icons/tb";
 
@@ -35,27 +33,40 @@ export default function ShowcaseCard({
   };
 
   return (
-    <div
+    <article
       onClick={() => onClick(item)}
       className="
         group
-        mb-6
+        relative
+        mb-8
         cursor-pointer
         break-inside-avoid
         overflow-hidden
+        rounded-[var(--radius-lg)]
         border
         border-[var(--border-subtle)]
-        bg-[var(--bg-card)]/30
-        backdrop-blur-sm
+        bg-[var(--bg-glass)]
+        backdrop-blur-[var(--blur-md)]
         transition-all
-        duration-500
-        hover:border-[var(--accent-cyan)]/50
-        hover:shadow-[0_0_30px_rgba(61,214,200,0.08)]
+        duration-300
+        hover:-translate-y-1
+        hover:border-[var(--border-accent)]
+        hover:shadow-[var(--shadow-glow-green)]
       "
     >
-      {/* IMAGE */}
+      {/* Ambient Glow */}
 
-      <div className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(circle at top right, rgba(191,0,255,.08), transparent 40%), radial-gradient(circle at bottom left, rgba(44,255,5,.08), transparent 60%)",
+        }}
+      />
+
+      {/* Image */}
+
+      <div className="relative isolate overflow-hidden">
         <img
           src={item.thumbnail}
           alt={item.title}
@@ -63,78 +74,89 @@ export default function ShowcaseCard({
             aspect-[16/10]
             w-full
             object-cover
-            transition-transform
-            duration-700
-            group-hover:scale-105
+            transition-all
+            duration-500
+            group-hover:brightness-110
+            group-hover:contrast-105
+            group-hover:saturate-110
           "
         />
 
-        {/* Overlay */}
+        {/* Dark Gradient */}
 
         <div
           className="
+            pointer-events-none
             absolute
             inset-0
             bg-gradient-to-t
-            from-black/90
+            from-black
             via-black/20
             to-transparent
           "
         />
 
-        {/* Type Badge */}
+        {/* Category */}
+
+        <span
+          className="
+            absolute
+            left-5
+            top-5
+            rounded-full
+            border
+            border-[var(--border-accent)]
+            bg-black/50
+            px-3
+            py-1
+            text-[10px]
+            font-semibold
+            uppercase
+            tracking-[0.18em]
+            text-[var(--accent-primary)]
+            backdrop-blur-md
+          "
+        >
+          {item.category}
+        </span>
+
+        {/* Type */}
 
         <div
           className="
             absolute
-            right-3
-            top-3
+            right-5
+            top-5
             flex
+            h-10
+            w-10
             items-center
-            gap-2
+            justify-center
+            rounded-full
             border
-            border-[var(--border-subtle)]
-            bg-black/60
-            px-3
-            py-1
-            text-sm
-            text-[var(--accent-cyan)]
+            border-[var(--border-accent)]
+            bg-black/50
+            text-lg
+            text-[var(--accent-primary)]
             backdrop-blur-md
           "
         >
           {getIcon()}
         </div>
-
-        {/* Category */}
-
-        <div
-          className="
-            absolute
-            left-4
-            top-4
-            bg-black/50
-            px-3
-            py-1
-            font-mono
-            text-[10px]
-            uppercase
-            tracking-[0.2em]
-            text-[var(--accent-cyan)]
-            backdrop-blur-sm
-          "
-        >
-          {item.category}
-        </div>
       </div>
 
       {/* Content */}
 
-      <div className="p-5">
+      <div className="relative z-10 p-6">
         <h3
           className="
             font-serif
             text-2xl
+            font-semibold
             text-[var(--foreground)]
+            transition-colors
+            duration-300
+            group-hover:text-[var(--accent-primary)]
           "
         >
           {item.title}
@@ -142,19 +164,18 @@ export default function ShowcaseCard({
 
         <p
           className="
-            mt-3
-            line-clamp-2
-            min-h-[3rem]
-            text-sm
-            leading-relaxed
+            mt-4
+            line-clamp-3
+            text-[15px]
+            leading-7
             text-[var(--text-muted)]
           "
         >
           {item.description}
         </p>
 
-        <div className="mt-4 min-h-[24px]">
-          {item.link && (
+        <div className="mt-6 flex items-center justify-between">
+          {item.link ? (
             <a
               href={item.link}
               target="_blank"
@@ -165,17 +186,33 @@ export default function ShowcaseCard({
                 items-center
                 gap-2
                 text-sm
+                font-medium
                 text-[var(--text-muted)]
                 transition-colors
-                hover:text-[var(--accent-cyan)]
+                duration-300
+                hover:text-[var(--accent-primary)]
               "
             >
-              <TbExternalLink />
               {item.linkText || "Visit"}
+
+              <TbExternalLink size={16} />
             </a>
+          ) : (
+            <span />
           )}
+
+          <span
+            className="
+              text-[11px]
+              uppercase
+              tracking-[0.18em]
+              text-[var(--accent-soft)]
+            "
+          >
+            View Details
+          </span>
+        </div>
       </div>
-      </div>
-    </div>
+    </article>
   );
 }

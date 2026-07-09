@@ -1,20 +1,19 @@
-import { TbActivity, TbBrandDiscord, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
+import { TbActivity, TbBrandDiscord, TbBrandDocker, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbFolders, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 import { RotatingStat } from "../components/RotatingStats";
 
 const stats = [
-  "12以上のアプリ",
-  "12以上のデプロイ",
-  "25以上のプロジェクト",
-  "40以上のAPI",
-  "3以上のECサイト",
-  "5以上のCMS",
+  "スケーラブルなAPI",
+  "AIアプリケーション",
+  "クラウドネイティブシステム",
+  "バックエンドプラットフォーム",
+  "本番運用ソフトウェア",
 ];
 
 export default {
     background: {
         hero: "/images/bg/jp/hero_bg.jpg",
-        contact: "/images/bg/jp/contact_bg.png"
+        contact: "/images/bg/jp/contact_bg_2.png"
     }, 
     header: {
             nav: [
@@ -27,14 +26,14 @@ export default {
                             icon: TbHome2,
                         },
                         {
-                            title: "スキル",
-                            href: "#skills",
-                            icon: TbCode,
-                        },
-                        {
                             title: "自己紹介",
                             href: "#about",
                             icon: TbUser,
+                        },
+                        {
+                            title: "スキル",
+                            href: "#profile",
+                            icon: TbCode,
                         },
                         {
                             title: "制作実績",
@@ -102,8 +101,8 @@ export default {
                 </span>
             </>
         ),
-        para: "Python、Django、FastAPIを用いたスケーラブルなバックエンドシステムの開発を専門としています。AI、分散システム、そして長期的にスケールするソフトウェアの設計・開発に情熱を注いでいます。",
-        cta1: "作品を見る",
+        para: "Python、Django、Django REST Framework、MySQLおよびNoSQLデータベースを活用したフルスタックソフトウェアエンジニアです。人工知能（AI）、コンピュータビジョン、ロボティクス、ゲーム開発、3Dアセットデザイン、そしてスケーラブルなソフトウェア開発に強い関心を持っています。また、アジャイル開発、ウォーターフォール開発、モノリシックアーキテクチャ、モジュラーモノリスアーキテクチャでの開発経験があります。",
+        cta1: "プロジェクトを見る",
         cta2: "履歴書をダウンロード",
         status: {
             head: "採用状況",
@@ -120,7 +119,54 @@ export default {
             )
         },
         model: "/images/model/sahil_jp.png",
-        availability: "世界中で勤務可能 • 海外転居可能"
+        availability: "世界中で勤務可能 • 海外転居可能",
+        tech_stack: {
+            title: "技術スタック",
+            subtitle: "主要技術スタック",
+            stacks: [
+                {
+                    title: "バックエンド",
+                    icon: TbServer,
+                    items: ["Python", "Django", "FastAPI"],
+                },
+                {
+                    title: "フロントエンド",
+                    icon: TbCode,
+                    items: ["React", "Next.js", "TypeScript"],
+                },
+                {
+                    title: "データベース",
+                    icon: TbDatabase,
+                    items: ["PostgreSQL", "MongoDB"],
+                },
+                {
+                    title: "DevOps",
+                    icon: TbBrandDocker,
+                    items: ["Docker", "AWS", "Git"],
+                },
+            ]
+        },
+        key_stats: {
+            title: "主な実績",
+            subtitle: "私についての主なデータ",
+            stats: [
+                {
+                    icon: TbBriefcase2,
+                    value: "2年以上",
+                    subtitle: "ソフトウェア開発の実務経験",
+                },
+                {
+                    icon: TbFolders,
+                    value: "40+",
+                    subtitle: "参画したプロジェクト数",
+                },
+                {
+                    icon: TbWorld,
+                    value: "世界中",
+                    subtitle: "リモート勤務・海外転居対応",
+                },
+            ]
+        }
     },
     profile: {
         tabs: [
@@ -356,24 +402,35 @@ export default {
         factCards: [
             {
                 id: "education",
-                icon: TbSchool,
                 type: "学歴",
                 heading: "情報技術修士(MCA)",
                 para: "マニパル大学ジャイプール校（在学中）",
             },
             {
                 id: "location",
-                icon: TbMapPin,
                 type: "所在地",
                 heading: "インド・コルカタ",
                 para: "リモート・ハイブリッド・海外転居可能な職種に対応",
             },
             {
                 id: "current-focus",
-                icon: TbCode,
                 type: "現在の専門分野",
                 heading: "バックエンドエンジニアリング",
-                para: "Python • Django • FastAPI • REST API",
+                para: "",
+                items: ["Python", "Django", "FastAPI", "REST APIs", "Cloud"]
+            },
+            {
+                id: "beyond-coding",
+                type: "コードのその先",
+                heading: "",
+                para: "",
+                items: [
+                    "日本語",
+                    "ゲーム開発",
+                    "音楽",
+                    "3Dモデリング",
+                    "AI"
+                ]
             },
         ],
     },

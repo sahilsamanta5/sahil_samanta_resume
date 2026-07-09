@@ -21,9 +21,9 @@ export default function Home() {
 
                 <Hero />
 
-                <ProfileTabs />
-
                 <About />
+
+                <ProfileTabs />
 
                 <ShowcaseSection />
 

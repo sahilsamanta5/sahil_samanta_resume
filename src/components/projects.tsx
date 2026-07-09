@@ -31,24 +31,24 @@ export default function ShowcaseSection() {
           (item) => item.category === activeFilter
         );
     }
-  }, [activeFilter]);
+  }, [activeFilter, translation.project.projects]);
 
   return (
     <>
       <section
         id="showcase"
-        className="relative mx-auto max-w-7xl px-6 py-28"
+        className="relative mx-auto max-w-7xl px-6 py-24"
       >
         {/* Header */}
 
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <span
             className="
               font-mono
               text-xs
               uppercase
               tracking-[0.3em]
-              text-[var(--accent-cyan)]
+              text-[var(--accent-soft)]
             "
           >
             {translation.project.title}
@@ -68,7 +68,7 @@ export default function ShowcaseSection() {
           <p
             className="
               mx-auto
-              mt-6
+              mt-4
               max-w-2xl
               text-[var(--text-muted)]
             "
@@ -76,54 +76,60 @@ export default function ShowcaseSection() {
             {translation.project.para}
           </p>
 
-          <div
-            className="
-              mx-auto
-              mt-8
-              h-px
-              w-24
-              bg-[var(--accent-cyan)]/40
-            "
-          />
+          <div className="mx-auto mt-5 h-px w-24 bg-[var(--accent-soft)] shadow-[var(--shadow-glow-green)]" />
         </div>
 
         {/* Filters */}
 
         <div
           className="
-            mb-12
+            mb-10
             flex
             flex-wrap
             justify-center
             gap-3
           "
         >
-          {translations.en.project.filters.map((filter, idx) => (
-            <button
-              key={filter}
-              onClick={() =>
-                setActiveFilter(filter)
-              }
-              className={`
-                border
-                px-5
-                py-2
-                text-[11px]
-                uppercase
-                tracking-[0.2em]
-                transition-all
-                duration-300
-
-                ${
-                  activeFilter === filter
-                    ? "border-[var(--accent-cyan)] bg-[var(--accent-glow)] text-[var(--accent-cyan)]"
-                    : "border-[var(--border-subtle)] text-[var(--text-muted)] hover:border-[var(--accent-cyan)]/40 hover:text-[var(--foreground)]"
-                }
-              `}
-            >
-              {translation.project.filters[idx]}
-            </button>
-          ))}
+          <div className="mb-1 flex flex-wrap justify-center gap-3">
+              {translations.en.project.filters.map((filter, idx) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`
+                    group
+                    rounded-full
+                    border
+                    px-6
+                    py-3
+                    text-xs
+                    font-semibold
+                    uppercase
+                    tracking-[0.18em]
+                    transition-all
+                    duration-300
+                    ${
+                      activeFilter === filter
+                        ? `
+                          border-[var(--border-accent)]
+                          bg-[var(--accent-primary)]
+                          text-[var(--background)]
+                          shadow-[var(--shadow-glow-green)]
+                        `
+                        : `
+                          border-[var(--border-subtle)]
+                          bg-[var(--bg-surface)]
+                          text-[var(--text-muted)]
+                          hover:border-[var(--border-accent)]
+                          hover:text-[var(--accent-primary)]
+                          hover:bg-[var(--bg-hover)]
+                        `
+                    }
+                  `}
+                >
+                  {translation.project.filters[idx]}
+                </button>
+              ))}
+            </div>
         </div>
 
         {/* Masonry Grid */}

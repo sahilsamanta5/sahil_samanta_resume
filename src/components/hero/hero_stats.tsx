@@ -1,29 +1,12 @@
 "use client";
 
-import { TbBriefcase2, TbFolders, TbWorld } from "react-icons/tb";
-
-const stats = [
-  {
-    icon: TbBriefcase2,
-    value: "2+ Years",
-    subtitle: "Professional Work Experience",
-  },
-  {
-    icon: TbFolders,
-    value: "40+",
-    subtitle: "Projects Contributed",
-  },
-  {
-    icon: TbWorld,
-    value: "Global",
-    subtitle: "Remote & Relocation Availability",
-  },
-];
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function HeroStats() {
+  const { translation } = useLanguage();
   return (
       <div className="grid gap-5 md:grid-cols-3">
-        {stats.map((stat) => {
+        {translation.hero.key_stats.stats.map((stat) => {
           const Icon = stat.icon;
 
           return (

@@ -1,5 +1,5 @@
 "use client"
-import { TbActivity, TbBrandDiscord, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
+import { TbActivity, TbBrandDiscord, TbBrandDocker, TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandX, TbBriefcase2, TbCertificate, TbChefHat, TbCloudComputing, TbCode, TbDatabase, TbDeviceDesktopCode, TbDeviceGamepad2, TbFolders, TbHierarchy3, TbHome2, TbLayoutGrid, TbMail, TbMapPin, TbMessageCircle, TbMusic, TbSchool, TbServer, TbServer2, TbTools, TbUser, TbWorld } from "react-icons/tb";
 import { ShowcaseItem } from "../components/showcase/showcaseData";
 import { RotatingStat } from "../components/RotatingStats";
 
@@ -13,7 +13,7 @@ const stats = [
 export default {
     background: {
         hero: "/images/bg/en/hero_bg_1.jpg",
-        contact: "/images/bg/en/contact_bg.png"
+        contact: "/images/bg/en/contact_bg_2.png"
     }, 
     header: {
         nav: [
@@ -26,19 +26,14 @@ export default {
                         icon: TbHome2,
                     },
                     {
-                        title: "Skills",
-                        href: "#skills",
-                        icon: TbCode,
-                    },
-                    {
                         title: "About",
                         href: "#about",
                         icon: TbUser,
                     },
                     {
-                        title: "Experience",
-                        href: "#experience",
-                        icon: TbBriefcase2,
+                        title: "Skills",
+                        href: "#profile",
+                        icon: TbCode,
                     },
                     {
                         title: "Projects",
@@ -108,10 +103,57 @@ export default {
             </>
         ),
         para: "Full-Stack Software Engineer specialized in using Python, Django, Django Rest Framework and MySQL & NoSQL Databases. I am passionate about topics covering Artificial Intelligence, Computer Vision, Robotics, Game Development, 3D Asset Designing and Software Scalability. I am someone who is familiar with Agile Methodology, Waterfall Methodology, Monolith Architecture and Monolith Modular Architecture.",
-        cta1: "Explore My Works",
-        cta2: "Download CV",
+        cta1: "View Projects",
+        cta2: "Download Resume",
         model: "/images/model/sahil_en.png",
-        availability: "Available Worldwide • Open To Relocation"
+        availability: "Available Worldwide • Open To Relocation",
+        tech_stack: {
+            title: "Technology Stack",
+            subtitle: "Top Tech Stacks Used",
+            stacks: [
+              {
+                title: "Backend",
+                icon: TbServer,
+                items: ["Python", "Django", "FastAPI"],
+              },
+              {
+                title: "Frontend",
+                icon: TbCode,
+                items: ["React", "Next.js", "TypeScript"],
+              },
+              {
+                title: "Database",
+                icon: TbDatabase,
+                items: ["PostgreSQL", "MongoDB"],
+              },
+              {
+                title: "DevOps",
+                icon: TbBrandDocker,
+                items: ["Docker", "AWS", "Git"],
+              },
+            ]
+        },
+        key_stats: {
+            title: "Key Stats",
+            subtitle: "Some Key Points about me",
+            stats: [
+                {
+                    icon: TbBriefcase2,
+                    value: "2+ Years",
+                    subtitle: "Professional Work Experience",
+                },
+                {
+                    icon: TbFolders,
+                    value: "40+",
+                    subtitle: "Projects Contributed",
+                },
+                {
+                    icon: TbWorld,
+                    value: "Global",
+                    subtitle: "Remote & Relocation Availability",
+                },
+            ]
+        }
     },
     profile: {
         tabs: [
@@ -293,24 +335,29 @@ export default {
         factCards: [
             {
                 id: "education",
-                icon: TbSchool,
                 type: "Education",
                 heading: "Master of Computer Applications",
                 para: "Manipal University Jaipur (Ongoing)"
             },
             {
                 id: "location",
-                icon: TbMapPin,
                 type: "Location",
                 heading: "Kolkata, India",
                 para: "Open to remote, hybrid, and relocation opportunities"
             },
             {
                 id: "current-focus",
-                icon: TbCode,
                 type: "Current Focus",
                 heading: "Backend Engineering",
-                para: "Python • Django • FastAPI • REST APIs"
+                para: "",
+                items: ["Python", "Django", "FastAPI", "REST APIs", "Cloud"]
+            },
+            {
+                id: "beyond-coding",
+                type: "Beyond Coding",
+                heading: "",
+                para: "",
+                items: ["Japanese", "Game Development", "Music", "Blender", "AI"]
             },
         ]
     },

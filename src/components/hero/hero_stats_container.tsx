@@ -2,8 +2,10 @@
 
 import { TbGridScan } from "react-icons/tb";
 import HeroStats from "./hero_stats";
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function HeroStatsContainer() {
+  const { translation } = useLanguage();
   return (
     <div className="lg:col-span-12">
       <div className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8">
@@ -15,11 +17,11 @@ export default function HeroStatsContainer() {
           <div>
 
             <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-soft)]">
-              Key Stats
+              {translation.hero.key_stats.title}
             </p>
 
             <h3 className="mt-2 font-display text-3xl text-[var(--foreground)]">
-              Some Key Points about me
+              {translation.hero.key_stats.subtitle}
             </h3>
 
           </div>

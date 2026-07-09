@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguage } from "@/src/context/LanguageContext";
 import {
   TbBrandPython,
   TbBrandReact,
@@ -11,30 +12,8 @@ import {
   TbCode,
 } from "react-icons/tb";
 
-const stack = [
-  {
-    title: "Backend",
-    icon: TbServer,
-    items: ["Python", "Django", "FastAPI"],
-  },
-  {
-    title: "Frontend",
-    icon: TbCode,
-    items: ["React", "Next.js", "TypeScript"],
-  },
-  {
-    title: "Database",
-    icon: TbDatabase,
-    items: ["PostgreSQL", "MongoDB"],
-  },
-  {
-    title: "DevOps",
-    icon: TbBrandDocker,
-    items: ["Docker", "AWS", "Git"],
-  },
-];
-
 export default function HeroTechStack() {
+  const {translation} = useLanguage();
   return (
     <div className="lg:col-span-8">
       <div className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8">
@@ -46,11 +25,11 @@ export default function HeroTechStack() {
           <div>
 
             <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-soft)]">
-              Technology Stack
+              {translation.hero.tech_stack.title}
             </p>
 
             <h3 className="mt-2 font-display text-3xl text-[var(--foreground)]">
-              Top Tech Stacks Used
+              {translation.hero.tech_stack.subtitle}
             </h3>
 
           </div>
@@ -66,7 +45,7 @@ export default function HeroTechStack() {
 
         <div className="grid gap-5 sm:grid-cols-2">
 
-          {stack.map((category) => {
+          {translation.hero.tech_stack.stacks.map((category) => {
             const Icon = category.icon;
 
             return (

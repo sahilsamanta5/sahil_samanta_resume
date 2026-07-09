@@ -78,7 +78,7 @@ export default function HeroLeft() {
             }}
             className="group inline-flex items-center gap-3 rounded-xl bg-[var(--accent-primary)] px-7 py-4 font-bold text-[var(--background)] transition-all duration-300 hover:bg-[var(--accent-secondary)] hover:text-[var(--foreground)]"
           >
-            <span>View Projects</span>
+            <span>{translation.hero.cta1}</span>
 
             <TbArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
@@ -89,7 +89,7 @@ export default function HeroLeft() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-xl border border-[var(--border)] bg-transparent px-7 py-4 font-semibold text-[var(--foreground)] transition-all duration-300 hover:border-[var(--accent-secondary)] hover:bg-[var(--bg-hover)]"
           >
-            <span>Download Resume</span>
+            <span>{translation.hero.cta2}</span>
 
             <TbDownload className="transition-transform duration-300 group-hover:-translate-y-0.5" />
           </a>
