@@ -4,7 +4,6 @@
 /* Base */
 @import "../styles/base/root.css";
 @import "../styles/base/theme.css";
-@import "../styles/base/typography.css";
 
 /* Utilities */
 @import "../styles/utils/anims.css";
@@ -12,3 +11,13 @@
 
 /* Tailwind LAST */
 @import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
