@@ -4,12 +4,11 @@ import { ShowcaseItem } from "../components/showcase/showcaseData";
 import { RotatingStat } from "../components/RotatingStats";
 
 const stats = [
-  "12+ Applications",
-  "12+ Deployments",
-  "25+ Projects",
-  "40+ APIs",
-  "3+ E-Commerce",
-  "5+ CMS",
+  "Scalable APIs",
+  "AI Applications",
+  "Cloud-native Systems",
+  "Backend Platforms",
+  "Production Software",
 ];
 export default {
     background: {
@@ -39,7 +38,7 @@ export default {
         title: () => (
             <>
                 <span className="xl:whitespace-nowrap">
-                    Developed{" "}
+                    Developing{" "}
                 </span>
 
                 <span className="xl:whitespace-nowrap">
